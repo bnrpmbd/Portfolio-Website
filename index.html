@@ -7,8 +7,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
     <!-- Bootsrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- My Css -->
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
 
   </head>
   <body id="home">
@@ -42,9 +46,9 @@
     <!-- Jumbotron -->
     </section>
     <section class="jumbotron text-center">
-      <img src="img/IMG_1059.jpg" alt="Banar Pambudi" width="200" class="rounded-circle img-thumbnail" />
+      <img src="img/IMG_1059.jpg" alt="Banar Pambudi" width="200" class="rounded-circle img-thumbnail"/>
       <h1 class="display-4">BANAR PAMBUDI</h1>
-      <p class="lead">Mahasiswa Teknik Elektro | Universitas Diponegoro</p>
+      <p class="lead"></p>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#ffffff"
@@ -58,16 +62,16 @@
     <!-- About -->
     <section id="about">
       <div class="container">
-        <div class="row text-center mb-2">
+        <div class="row text-center mb-2" data-aos="fade-in" data-aos-offset="400" data-aos-duration="500">
           <div class="col">
             <h2>About Me</h2>
           </div>
         </div>
         <div class="row justify-content-center text-center">
-          <div class="col-md-4">
+          <div class="col-md-4" data-aos="fade-right" data-aos-offset="400" data-aos-delay="100">
             <p>Saya memiliki ketertarikan dan minat dalam mempelajari bahasa pemrograman sejak menempuh jenjang pendidikan Sekolah Menegah Atas (SMA). Pada Oktober 2023, saya terus meningkatkan skills dalam penggunaan bahasa pemrograman, seperti C++, HTML, dan CSS. Pada waktu kedepannya saya akan terus belajar dan memiliki keinginan untuk terus meningkatkan dan menambah skills bahasa pemrograman yang lainnya. Saat ini, saya memiliki 5 projek latihan yang saya buat yaitu 4 projek dengan menggunakan C++ dan 1 projek menggunakan HTML & CSS.</p>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4" data-aos="fade-left" data-aos-offset="400" data-aos-delay="200">
             <p>Halaman website sederhana ini merupakan website pertama yang saya buat, pada masa SMA saya merupakan orang yang introvert, namun seiring berjalannya waktu saya terus meningkatkan skills komunikasi saya untuk dapat beradaptasi dengan cepat terhadap lingkungan sekitar. Saya merupakan orang yang mungkin gampang segan dengan orang baru namun hal tersebut tidak berlaku untuk orang lama ya <i class="bi bi-emoji-grin-fil"></i>. Pada waktu luang, saya memiliki hobi untuk bermain Game dan menonton Anime, namun saya tetap akan memprioritaskan waktu saya untuk giat belajar terkait hal yang bermanfaat seperti halnya menambah wawasan dan skills dalam penggunaan bahasa pemrograman. Selain itu, saya memiliki kesukaan dalam kesenian Jawa seperti Wayang Kulit yang memilili daya tarik bagi saya.</p>
           </div>
         </div>
@@ -80,13 +84,13 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#79bce9" fill-opacity="1" d="M0,160L40,165.3C80,171,160,181,240,170.7C320,160,400,128,480,122.7C560,117,640,139,720,170.7C800,203,880,245,960,256C1040,267,1120,245,1200,234.7C1280,224,1360,224,1400,224L1440,224L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
     <div id="projects">
       <div class="container">
-        <div class="row text-center mb-3">
+        <div class="row text-center mb-3" data-aos="fade-in" data-aos-offset="100" data-aos-duration="500" data-aos-delay="50">
           <div class="col">
             <h2>My Projects</h2>
           </div>
         </div>
         <div class="row justify-content-center">
-          <div class="col-md-4 mb-4">
+          <div class="col-md-4 mb-4" data-aos="flip-down" data-aos-offset="100" data-aos-delay="100">
             <div class="card">
               <img src="img/Project/1.png" class="card-img-top" alt="Project Kalkulator Simpel">
               <div class="card-body">
@@ -94,7 +98,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4 mb-4">
+          <div class="col-md-4 mb-4" data-aos="flip-down" data-aos-offset="100" data-aos-delay="200">
             <div class="card">
               <img src="img/Project/2.png" class="card-img-top" alt="Project Pola Segitiga">
               <div class="card-body">
@@ -102,7 +106,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4 mb-4">
+          <div class="col-md-4 mb-4" data-aos="flip-down" data-aos-offset="100" data-aos-delay="300">
             <div class="card">
               <img src="img/Project/3.png" class="card-img-top" alt="Project Deret Fibonacci">
               <div class="card-body">
@@ -110,7 +114,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4 mb-4">
+          <div class="col-md-4 mb-4" data-aos="flip-down" data-aos-delay="100">
             <div class="card">
               <img src="img/Project/4.jpg" class="card-img-top" alt="Project Web Dasar">
               <div class="card-body">
@@ -118,7 +122,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4 mb-4">
+          <div class="col-md-4 mb-4" data-aos="flip-down" data-aos-delay="200">
             <div class="card">
               <img src="img/Project/5.png" class="card-img-top" alt="Project Dadu Online">
               <div class="card-body">
@@ -137,7 +141,7 @@
     <section>
     <div id="contact">
       <div class="container">
-        <div class="row text-center mb-3">
+        <div class="row text-center mb-3" data-aos="fade-in">
           <div class="col">
             <h2>Contact Me</h2>
           </div>
@@ -183,6 +187,25 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+        duration: 1000,
+      });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    <script>
+      gsap.registerPlugin(TextPlugin);
+      gsap.to('.lead', {duration: 1.5, delay: 1.5, text: 'Mahasiswa Teknik Elektro | Universitas Diponegoro'});
+      gsap.from('.navbar', {duration: 1.5, y: '-100%', opacity: 0, ease: "bounce"});
+      gsap.from('.display-4', {duration: 1.5, x: -100, opacity: 0, delay: 0.3, ease: "back.out(1)"});
+      gsap.from('.jumbotron img', { duration: 1, rotationY: 360, opacity: 0 });
+    </script>
+
     <script>
       const scriptURL = 'https://script.google.com/macros/s/AKfycbyYX7TV7N79rLiMtUvnuCBjNpLYZie6N5n5MBOMh0MeKZ7k6C168gIL7KBxdH-srZOHRw/exec';
       const form = document.forms['wpu-contact-form'];
