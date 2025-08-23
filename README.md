@@ -73,7 +73,7 @@ Website portfolio modern dengan desain futuristik menggunakan HTML, CSS (Tailwin
 
 Jika ada pertanyaan atau saran, silakan hubungi:
 
-- Email: afiq@example.com
+- Email: banarpambudi094@gmail.com
 - LinkedIn: [linkedin.com/in/banarpambudi](https://linkedin.com/in/banarpambudi)
 - GitHub: [github.com/bnrpmbd](https://github.com/bnrpmbd)
 
