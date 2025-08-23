@@ -64,9 +64,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const typewriterText = document.querySelector('.typewriter');
     if (typewriterText) {
         const texts = [
-            'Full Stack Developer & Tech Enthusiast',
-            'JavaScript & React Specialist',
-            'UI/UX Designer & Creative Thinker',
+            'WebDev and Robotics Enthusiast',
+            'JavaScript & Python Specialist',
+            'Undergraduate Student of Electrical Engineering',
             'Problem Solver & Innovation Driver'
         ];
         let textIndex = 0;
@@ -354,3 +354,4 @@ function createMatrixRain() {
 
 // Uncomment the line below to enable matrix rain effect
 // createMatrixRain();
+
