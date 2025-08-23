@@ -1,43 +1,43 @@
 # Portfolio Website - Banar Pambudi
 
-Website portfolio modern dengan desain futuristik menggunakan HTML, CSS (Tailwind), dan JavaScript.
+Modern portfolio website with futuristic design using HTML, CSS (Tailwind), JavaScript, and Google Apps Script.
 
 ## 🚀 Features
 
-- **Desain Futuristik**: Tema cyberpunk dengan animasi menarik
-- **Responsif**: Optimal di semua device (desktop, tablet, mobile)
-- **Interaktif**: Animasi scroll, typewriter effect, particle system
-- **Modern**: Menggunakan Tailwind CSS dan JavaScript ES6+
-- **Performance**: Optimized untuk loading yang cepat
+- **Futuristic Design**: Cyberpunk theme with engaging animations
+- **Responsive**: Optimized for all devices (desktop, tablet, mobile)
+- **Interactive**: Scroll animations, typewriter effect, particle system
+- **Modern**: Uses Tailwind CSS and JavaScript ES6+
+- **Performance**: Optimized for fast loading
 
 ## 🛠️ Tech Stack
 
-- **HTML5**: Struktur website
+- **HTML5**: Website structure
 - **Tailwind CSS**: Styling dan responsive design
-- **JavaScript**: Interaktivitas dan animasi
+- **JavaScript**: Interactivity and animation
 - **Font Awesome**: Icons
 - **Google Fonts**: Typography (Orbitron)
 
 ## 🎨 Fitur Utama
 
 ### 1. Hero Section
-- Animasi typewriter dengan multiple text
+- Typewriter animation with multiple text
 - Floating particles effect
-- Gradient background dengan grid pattern
+- Gradient background with grid pattern
 - Call-to-action buttons
 
 ### 2. About Section
-- Skill bars dengan animasi
+- Animated skill bars
 - Statistics cards
 - Responsive grid layout
 
 ### 3. Projects Section
-- Card hover effects dengan glow
+- Card hover effects with glow
 - Technology tags
-- Project showcase dengan buttons
+- Project showcase with buttons
 
 ### 4. Contact Section
-- Contact form dengan validation
+- Contact form with validation
 - Social media links
 - Contact information cards
 
@@ -52,13 +52,13 @@ Website portfolio modern dengan desain futuristik menggunakan HTML, CSS (Tailwin
 ## 🎯 Optimizations
 
 ### Performance
-- Menggunakan CDN untuk Tailwind CSS
-- Minified CSS dan JavaScript
-- Optimized images (gunakan WebP format)
-- Lazy loading untuk images
+- Using a CDN for Tailwind CSS
+- Minified CSS and JavaScript
+- Optimized images (use WebP format)
+- Lazy loading for images
 
 ### SEO
-- Meta tags untuk social media sharing
+- Meta tags for social media sharing
 - Structured data markup
 - Sitemap.xml
 - Robots.txt
@@ -71,7 +71,7 @@ Website portfolio modern dengan desain futuristik menggunakan HTML, CSS (Tailwin
 
 ## 📞 Contact
 
-Jika ada pertanyaan atau saran, silakan hubungi:
+If you have any questions or suggestions, please contact:
 
 - Email: banarpambudi094@gmail.com
 - LinkedIn: [linkedin.com/in/banarpambudi](https://linkedin.com/in/banarpambudi)
