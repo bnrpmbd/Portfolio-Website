@@ -31,6 +31,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Favicon default -->
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+
+    <!-- PNG fallback -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+
+    <!-- Untuk iOS/Android -->
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+    <!-- Progress Web App -->
+    <link rel="manifest" href="assets/site.webmanifest">
+
     <style>
         @keyframes glow {
             from { box-shadow: 0 0 20px #00d2ff; }
@@ -47,16 +61,45 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        @keyframes typewriter {
-            0%, 50% { width: 0; }
-            100% { width: 100%; }
-        }
-        
         .typewriter {
             overflow: hidden;
             border-right: 3px solid #00d2ff;
             white-space: nowrap;
-            animation: typewriter 4s steps(40) infinite;
+            max-width: 100%;
+            min-height: 1.5em; /* Ensure consistent height */
+        }
+        
+        /* Mobile responsive typewriter */
+        @media (max-width: 768px) {
+            .typewriter {
+                white-space: normal; /* Allow wrapping for longer text */
+                line-height: 1.4;
+                border-right: 2px solid #00d2ff;
+                font-size: 0.85rem;
+                padding: 0 0.5rem;
+                overflow: hidden;
+                max-width: calc(100vw - 2rem); /* Prevent overflow */
+                word-wrap: break-word;
+                height: auto; /* Allow height adjustment */
+                min-height: 2.8em; /* Space for 2 lines */
+            }
+            
+            /* Better mobile spacing */
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            /* Mobile contact cards */
+            .contact-card {
+                margin-bottom: 1rem;
+            }
+            
+            /* Hero section mobile adjustment */
+            #home {
+                padding-top: 6rem;
+                min-height: 100vh;
+            }
         }
         
         .gradient-bg {
@@ -122,34 +165,34 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center relative cyber-grid">
+    <section id="home" class="min-h-screen flex items-center justify-center relative cyber-grid pt-20 md:pt-0">
         <div class="absolute inset-0 bg-gradient-to-br from-cyber-dark via-transparent to-cyber-purple/20"></div>
-        <div class="container mx-auto px-6 relative z-10">
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
             <div class="text-center">
-                <div class="animate-float mb-8">
-                    <div class="w-40 h-40 mx-auto rounded-full border-4 border-cyber-blue/50 p-2 animate-glow">
+                <div class="animate-float mb-8 mt-8 md:mt-0">
+                    <div class="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full border-4 border-cyber-blue/50 p-2 animate-glow">
                         <div class="w-full h-full rounded-full overflow-hidden bg-gradient-to-br from-cyber-blue to-cyber-purple">
                             <img src="assets/Foto.jpg" alt="Profile Photo" class="w-full h-full object-cover rounded-full" id="profile-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="w-full h-full flex items-center justify-center" style="display: none;">
-                                <i class="fas fa-user text-6xl text-white"></i>
+                                <i class="fas fa-user text-4xl md:text-6xl text-white"></i>
                             </div>
                         </div>
                     </div>
                 </div>
-                <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-slide-up">
+                <h1 class="text-3xl md:text-5xl lg:text-7xl font-bold mb-6 animate-slide-up px-4">
                     Hello, I'm <span class="text-cyber-blue">Banar Pambudi</span>
                 </h1>
-                <div class="text-xl md:text-2xl mb-8 h-8">
-                    <span class="typewriter text-cyber-blue">WebDev and Robotics Enthusiast | Undergraduate student of Electrical Engineering</span>
+                <div class="text-lg md:text-xl lg:text-2xl mb-8 min-h-[2rem] md:min-h-[2.5rem]">
+                    <span class="typewriter text-cyber-blue text-center block px-4">WebDev and Robotics Enthusiast | Undergraduate student of Electrical Engineering</span>
                 </div>
-                <p class="text-lg md:text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+                <p class="text-base md:text-lg lg:text-xl text-gray-300 mb-12 max-w-2xl mx-auto px-4">
                     Passionate about creating innovative digital solutions with cutting-edge technology
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button id="view-work-btn" class="px-8 py-4 bg-gradient-to-r from-cyber-blue to-cyber-purple rounded-lg font-bold hover:scale-105 transition-transform">
+                <div class="flex flex-col sm:flex-row gap-4 justify-center px-4">
+                    <button id="view-work-btn" class="px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-cyber-blue to-cyber-purple rounded-lg font-bold hover:scale-105 transition-transform">
                         View My Work
                     </button>
-                    <a href="assets/cv.pdf" download="Banar_Pambudi_CV.pdf" class="px-8 py-4 border-2 border-cyber-blue text-cyber-blue rounded-lg font-bold hover:bg-cyber-blue hover:text-cyber-dark transition-colors text-center">
+                    <a href="assets/cv.pdf" download="Banar_Pambudi_CV.pdf" class="px-6 md:px-8 py-3 md:py-4 border-2 border-cyber-blue text-cyber-blue rounded-lg font-bold hover:bg-cyber-blue hover:text-cyber-dark transition-colors text-center">
                         <i class="fas fa-download mr-2"></i>Download CV
                     </a>
                 </div>
@@ -201,43 +244,43 @@
                     <h3 class="text-2xl font-bold mb-6 text-cyber-blue">Skills & Technologies</h3>
                     
                     <div class="space-y-4">
-                        <div class="skill-item">
+                        <div class="skill-item" data-skill="70">
                             <div class="flex justify-between mb-2">
                                 <span>Python</span>
                                 <span class="text-cyber-blue">70%</span>
                             </div>
-                            <div class="w-full bg-cyber-dark rounded-full h-2">
-                                <div class="bg-gradient-to-r from-cyber-blue to-cyber-purple h-2 rounded-full" style="width: 90%"></div>
+                            <div class="w-full bg-cyber-dark rounded-full h-3">
+                                <div class="bg-gradient-to-r from-cyber-blue to-cyber-purple h-3 rounded-full skill-bar" style="width: 0%" data-width="70%"></div>
                             </div>
                         </div>
                         
-                        <div class="skill-item">
+                        <div class="skill-item" data-skill="50">
                             <div class="flex justify-between mb-2">
                                 <span>C++</span>
                                 <span class="text-cyber-blue">50%</span>
                             </div>
-                            <div class="w-full bg-cyber-dark rounded-full h-2">
-                                <div class="bg-gradient-to-r from-cyber-blue to-cyber-purple h-2 rounded-full" style="width: 85%"></div>
+                            <div class="w-full bg-cyber-dark rounded-full h-3">
+                                <div class="bg-gradient-to-r from-cyber-blue to-cyber-purple h-3 rounded-full skill-bar" style="width: 0%" data-width="50%"></div>
                             </div>
                         </div>
                         
-                        <div class="skill-item">
+                        <div class="skill-item" data-skill="60">
                             <div class="flex justify-between mb-2">
                                 <span>JavaScript</span>
                                 <span class="text-cyber-blue">60%</span>
                             </div>
-                            <div class="w-full bg-cyber-dark rounded-full h-2">
-                                <div class="bg-gradient-to-r from-cyber-blue to-cyber-purple h-2 rounded-full" style="width: 80%"></div>
+                            <div class="w-full bg-cyber-dark rounded-full h-3">
+                                <div class="bg-gradient-to-r from-cyber-blue to-cyber-purple h-3 rounded-full skill-bar" style="width: 0%" data-width="60%"></div>
                             </div>
                         </div>
                         
-                        <div class="skill-item">
+                        <div class="skill-item" data-skill="35">
                             <div class="flex justify-between mb-2">
                                 <span>Tailwind CSS</span>
                                 <span class="text-cyber-blue">35%</span>
                             </div>
-                            <div class="w-full bg-cyber-dark rounded-full h-2">
-                                <div class="bg-gradient-to-r from-cyber-blue to-cyber-purple h-2 rounded-full" style="width: 75%"></div>
+                            <div class="w-full bg-cyber-dark rounded-full h-3">
+                                <div class="bg-gradient-to-r from-cyber-blue to-cyber-purple h-3 rounded-full skill-bar" style="width: 0%" data-width="35%"></div>
                             </div>
                         </div>
                     </div>
@@ -493,35 +536,35 @@
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="space-y-8">
-                    <div class="flex items-center space-x-4 p-6 bg-cyber-dark rounded-lg border border-cyber-blue/20">
-                        <div class="w-12 h-12 bg-cyber-blue rounded-lg flex items-center justify-center">
-                            <i class="fas fa-envelope text-cyber-dark text-xl"></i>
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-12">
+                <div class="space-y-6 lg:space-y-8">
+                    <div class="flex items-center space-x-3 lg:space-x-4 p-4 lg:p-6 bg-cyber-dark rounded-lg border border-cyber-blue/20">
+                        <div class="w-10 h-10 lg:w-12 lg:h-12 bg-cyber-blue rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-envelope text-cyber-dark text-lg lg:text-xl"></i>
                         </div>
-                        <div>
+                        <div class="min-w-0 flex-1">
                             <h3 class="font-bold text-cyber-blue">Email</h3>
-                            <p class="text-gray-300">banarpambudi094@gmail.com</p>
+                            <p class="text-gray-300 text-sm lg:text-base break-all">banarpambudi094@gmail.com</p>
                         </div>
                     </div>
                     
-                    <div class="flex items-center space-x-4 p-6 bg-cyber-dark rounded-lg border border-cyber-blue/20">
-                        <div class="w-12 h-12 bg-cyber-purple rounded-lg flex items-center justify-center">
-                            <i class="fas fa-phone text-white text-xl"></i>
+                    <div class="flex items-center space-x-3 lg:space-x-4 p-4 lg:p-6 bg-cyber-dark rounded-lg border border-cyber-blue/20">
+                        <div class="w-10 h-10 lg:w-12 lg:h-12 bg-cyber-purple rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-phone text-white text-lg lg:text-xl"></i>
                         </div>
-                        <div>
+                        <div class="min-w-0 flex-1">
                             <h3 class="font-bold text-cyber-blue">Phone</h3>
-                            <p class="text-gray-300">+62 821-7619-3344</p>
+                            <p class="text-gray-300 text-sm lg:text-base">+62 821-7619-3344</p>
                         </div>
                     </div>
                     
-                    <div class="flex items-center space-x-4 p-6 bg-cyber-dark rounded-lg border border-cyber-blue/20">
-                        <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center">
-                            <i class="fas fa-map-marker-alt text-white text-xl"></i>
+                    <div class="flex items-center space-x-3 lg:space-x-4 p-4 lg:p-6 bg-cyber-dark rounded-lg border border-cyber-blue/20">
+                        <div class="w-10 h-10 lg:w-12 lg:h-12 bg-green-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-map-marker-alt text-white text-lg lg:text-xl"></i>
                         </div>
-                        <div>
+                        <div class="min-w-0 flex-1">
                             <h3 class="font-bold text-cyber-blue">Location</h3>
-                            <p class="text-gray-300">Kota Semarang, Jawa Tengah, Indonesia</p>
+                            <p class="text-gray-300 text-sm lg:text-base">Kota Semarang, Jawa Tengah, Indonesia</p>
                         </div>
                     </div>
                     

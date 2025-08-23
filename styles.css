@@ -302,6 +302,16 @@
     .holographic {
         animation-duration: 2s;
     }
+    
+    /* Typewriter text responsive handling */
+    .typewriter {
+        font-size: 0.9rem !important;
+        line-height: 1.3 !important;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        max-width: 100%;
+    }
 }
 
 /* Accessibility improvements */

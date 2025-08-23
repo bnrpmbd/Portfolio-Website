@@ -63,12 +63,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Typewriter effect
     const typewriterText = document.querySelector('.typewriter');
     if (typewriterText) {
+        // Same texts for both mobile and desktop
         const texts = [
             'WebDev and Robotics Enthusiast',
             'JavaScript & Python Specialist',
             'Undergraduate Student of Electrical Engineering',
             'Problem Solver & Innovation Driver'
         ];
+        
         let textIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
@@ -267,17 +269,20 @@ function animateSkills() {
     const skillObserver = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const progressBar = entry.target.querySelector('.bg-gradient-to-r');
+                const progressBar = entry.target.querySelector('.skill-bar');
                 if (progressBar) {
+                    const targetWidth = progressBar.getAttribute('data-width');
                     progressBar.style.width = '0%';
+                    progressBar.style.transition = 'none';
+                    
                     setTimeout(() => {
                         progressBar.style.transition = 'width 2s ease-in-out';
-                        progressBar.style.width = progressBar.getAttribute('data-width') || progressBar.style.width;
+                        progressBar.style.width = targetWidth;
                     }, 200);
                 }
             }
         });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.3 });
     
     skillBars.forEach(skill => {
         skillObserver.observe(skill);
