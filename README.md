@@ -18,7 +18,7 @@ Modern portfolio website with futuristic design using HTML, CSS (Tailwind), Java
 - **Font Awesome**: Icons
 - **Google Fonts**: Typography (Orbitron)
 
-## 🎨 Fitur Utama
+## 🎨 Main Features
 
 ### 1. Hero Section
 - Typewriter animation with multiple text
