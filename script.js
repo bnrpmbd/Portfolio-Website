@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const typewriterText = document.querySelector('.typewriter');
     if (typewriterText) {
         const texts = [
-            'WebDev & Robotics Enthusiast',
+            'WebDev and Robotics Enthusiast',
             'JavaScript & Python Specialist',
             'Undergraduate Student of Electrical Engineering',
             'Problem Solver & Innovation Driver'
@@ -107,17 +107,111 @@ document.addEventListener('DOMContentLoaded', function() {
     // Particle effect for hero section
     createParticles();
 
-    // Contact form handling
-    const contactForm = document.querySelector('#contact form');
+    // Contact form handling with Google Sheets integration
+    const contactForm = document.querySelector('#contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Show success message
-            showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
+            const submitBtn = document.getElementById('submit-btn');
+            const submitText = document.getElementById('submit-text');
+            const submitLoader = document.getElementById('submit-loader');
             
-            // Reset form
-            this.reset();
+            // Show loading state
+            submitBtn.disabled = true;
+            submitText.textContent = 'Sending...';
+            submitLoader.classList.remove('hidden');
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                subject: formData.get('subject'),
+                message: formData.get('message'),
+                timestamp: new Date().toISOString()
+            };
+            
+            // Send to Google Sheets
+            const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwvzdccT2OdgD9HPQc3M3FVz3jTvJEJJFzPlLDvehieqgS9p9uVoPI6yJB3C9pQsDuP/exec';
+            
+            fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+            .then(() => {
+                // Reset button state
+                submitBtn.disabled = false;
+                submitText.textContent = 'Send Message';
+                submitLoader.classList.add('hidden');
+                
+                // Show success message
+                showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
+                
+                // Reset form
+                this.reset();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                
+                // Reset button state
+                submitBtn.disabled = false;
+                submitText.textContent = 'Send Message';
+                submitLoader.classList.add('hidden');
+                
+                // Show error message
+                showNotification('Failed to send message. Please try again.', 'error');
+            });
+        });
+    }
+
+    // View Work button functionality
+    const viewWorkBtn = document.getElementById('view-work-btn');
+    if (viewWorkBtn) {
+        viewWorkBtn.addEventListener('click', function() {
+            document.querySelector('#projects').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+    }
+
+    // View All Projects functionality
+    const viewAllProjectsBtn = document.getElementById('view-all-projects-btn');
+    const additionalProjects = document.getElementById('additional-projects');
+    
+    if (viewAllProjectsBtn && additionalProjects) {
+        viewAllProjectsBtn.addEventListener('click', function() {
+            if (additionalProjects.classList.contains('hidden')) {
+                // Show additional projects
+                additionalProjects.classList.remove('hidden');
+                additionalProjects.style.opacity = '0';
+                additionalProjects.style.transform = 'translateY(20px)';
+                
+                // Animate in
+                setTimeout(() => {
+                    additionalProjects.style.transition = 'all 0.5s ease-out';
+                    additionalProjects.style.opacity = '1';
+                    additionalProjects.style.transform = 'translateY(0)';
+                }, 10);
+                
+                this.textContent = 'Show Less Projects';
+            } else {
+                // Hide additional projects
+                additionalProjects.style.transition = 'all 0.3s ease-in';
+                additionalProjects.style.opacity = '0';
+                additionalProjects.style.transform = 'translateY(-20px)';
+                
+                setTimeout(() => {
+                    additionalProjects.classList.add('hidden');
+                }, 300);
+                
+                this.textContent = 'View All Projects';
+            }
         });
     }
 

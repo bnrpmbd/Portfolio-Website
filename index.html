@@ -146,12 +146,12 @@
                     Passionate about creating innovative digital solutions with cutting-edge technology
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button class="px-8 py-4 bg-gradient-to-r from-cyber-blue to-cyber-purple rounded-lg font-bold hover:scale-105 transition-transform">
+                    <button id="view-work-btn" class="px-8 py-4 bg-gradient-to-r from-cyber-blue to-cyber-purple rounded-lg font-bold hover:scale-105 transition-transform">
                         View My Work
                     </button>
-                    <button class="px-8 py-4 border-2 border-cyber-blue text-cyber-blue rounded-lg font-bold hover:bg-cyber-blue hover:text-cyber-dark transition-colors">
-                        Download CV
-                    </button>
+                    <a href="assets/cv.pdf" download="Banar_Pambudi_CV.pdf" class="px-8 py-4 border-2 border-cyber-blue text-cyber-blue rounded-lg font-bold hover:bg-cyber-blue hover:text-cyber-dark transition-colors text-center">
+                        <i class="fas fa-download mr-2"></i>Download CV
+                    </a>
                 </div>
             </div>
         </div>
@@ -204,7 +204,7 @@
                         <div class="skill-item">
                             <div class="flex justify-between mb-2">
                                 <span>Python</span>
-                                <span class="text-cyber-blue">90%</span>
+                                <span class="text-cyber-blue">70%</span>
                             </div>
                             <div class="w-full bg-cyber-dark rounded-full h-2">
                                 <div class="bg-gradient-to-r from-cyber-blue to-cyber-purple h-2 rounded-full" style="width: 90%"></div>
@@ -214,7 +214,7 @@
                         <div class="skill-item">
                             <div class="flex justify-between mb-2">
                                 <span>C++</span>
-                                <span class="text-cyber-blue">85%</span>
+                                <span class="text-cyber-blue">50%</span>
                             </div>
                             <div class="w-full bg-cyber-dark rounded-full h-2">
                                 <div class="bg-gradient-to-r from-cyber-blue to-cyber-purple h-2 rounded-full" style="width: 85%"></div>
@@ -224,7 +224,7 @@
                         <div class="skill-item">
                             <div class="flex justify-between mb-2">
                                 <span>JavaScript</span>
-                                <span class="text-cyber-blue">80%</span>
+                                <span class="text-cyber-blue">60%</span>
                             </div>
                             <div class="w-full bg-cyber-dark rounded-full h-2">
                                 <div class="bg-gradient-to-r from-cyber-blue to-cyber-purple h-2 rounded-full" style="width: 80%"></div>
@@ -234,7 +234,7 @@
                         <div class="skill-item">
                             <div class="flex justify-between mb-2">
                                 <span>Tailwind CSS</span>
-                                <span class="text-cyber-blue">75%</span>
+                                <span class="text-cyber-blue">35%</span>
                             </div>
                             <div class="w-full bg-cyber-dark rounded-full h-2">
                                 <div class="bg-gradient-to-r from-cyber-blue to-cyber-purple h-2 rounded-full" style="width: 75%"></div>
@@ -365,9 +365,119 @@
             </div>
             
             <div class="text-center mt-12">
-                <button class="px-8 py-4 border-2 border-cyber-blue text-cyber-blue rounded-lg font-bold hover:bg-cyber-blue hover:text-cyber-dark transition-colors">
+                <button id="view-all-projects-btn" class="px-8 py-4 border-2 border-cyber-blue text-cyber-blue rounded-lg font-bold hover:bg-cyber-blue hover:text-cyber-dark transition-colors">
                     View All Projects
                 </button>
+            </div>
+            
+            <!-- Hidden Projects Section -->
+            <div id="additional-projects" class="hidden mt-16">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 4 -->
+                    <div class="card-hover bg-cyber-gray rounded-xl p-6 border border-cyber-blue/20">
+                        <div class="mb-6">
+                            <div class="w-full h-48 bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-lg overflow-hidden relative group">
+                                <img src="assets/project4.jpg" alt="Humanoid Robot Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-orange-500/20 to-red-500/20" style="display: none;">
+                                    <i class="fas fa-robot text-6xl text-orange-500"></i>
+                                </div>
+                                <div class="absolute inset-0 bg-cyber-dark/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <div class="text-center">
+                                        <i class="fas fa-search-plus text-3xl text-white mb-2"></i>
+                                        <p class="text-white font-bold">View Project</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-cyber-blue">Humanoid Soccer Robot</h3>
+                        <p class="text-gray-300 mb-4">
+                            Computer vision system for humanoid soccer robot in EWS Bascorro team.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-orange-500/20 text-orange-500 rounded-full text-sm">Python</span>
+                            <span class="px-3 py-1 bg-orange-500/20 text-orange-500 rounded-full text-sm">OpenCV</span>
+                            <span class="px-3 py-1 bg-orange-500/20 text-orange-500 rounded-full text-sm">Computer Vision</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <button class="flex-1 py-2 bg-orange-500 text-white rounded-lg font-bold hover:bg-orange-500/80 transition-colors">
+                                <i class="fas fa-eye mr-2"></i>View
+                            </button>
+                            <button class="flex-1 py-2 border border-orange-500 text-orange-500 rounded-lg font-bold hover:bg-orange-500 hover:text-white transition-colors">
+                                <i class="fab fa-github mr-2"></i>Code
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 5 -->
+                    <div class="card-hover bg-cyber-gray rounded-xl p-6 border border-cyber-blue/20">
+                        <div class="mb-6">
+                            <div class="w-full h-48 bg-gradient-to-br from-yellow-500/20 to-amber-500/20 rounded-lg overflow-hidden relative group">
+                                <img src="assets/project5.jpg" alt="IoT Monitoring System" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-yellow-500/20 to-amber-500/20" style="display: none;">
+                                    <i class="fas fa-microchip text-6xl text-yellow-500"></i>
+                                </div>
+                                <div class="absolute inset-0 bg-cyber-dark/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <div class="text-center">
+                                        <i class="fas fa-search-plus text-3xl text-white mb-2"></i>
+                                        <p class="text-white font-bold">View Project</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-cyber-blue">IoT Monitoring System</h3>
+                        <p class="text-gray-300 mb-4">
+                            Real-time monitoring system using Arduino and sensors for environmental data.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-yellow-500/20 text-yellow-500 rounded-full text-sm">Arduino</span>
+                            <span class="px-3 py-1 bg-yellow-500/20 text-yellow-500 rounded-full text-sm">C++</span>
+                            <span class="px-3 py-1 bg-yellow-500/20 text-yellow-500 rounded-full text-sm">IoT</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <button class="flex-1 py-2 bg-yellow-500 text-cyber-dark rounded-lg font-bold hover:bg-yellow-500/80 transition-colors">
+                                <i class="fas fa-eye mr-2"></i>View
+                            </button>
+                            <button class="flex-1 py-2 border border-yellow-500 text-yellow-500 rounded-lg font-bold hover:bg-yellow-500 hover:text-cyber-dark transition-colors">
+                                <i class="fab fa-github mr-2"></i>Code
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 6 -->
+                    <div class="card-hover bg-cyber-gray rounded-xl p-6 border border-cyber-blue/20">
+                        <div class="mb-6">
+                            <div class="w-full h-48 bg-gradient-to-br from-pink-500/20 to-rose-500/20 rounded-lg overflow-hidden relative group">
+                                <img src="assets/project6.jpg" alt="Mobile App Development" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-pink-500/20 to-rose-500/20" style="display: none;">
+                                    <i class="fas fa-mobile-alt text-6xl text-pink-500"></i>
+                                </div>
+                                <div class="absolute inset-0 bg-cyber-dark/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <div class="text-center">
+                                        <i class="fas fa-search-plus text-3xl text-white mb-2"></i>
+                                        <p class="text-white font-bold">View Project</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-cyber-blue">Mobile App Development</h3>
+                        <p class="text-gray-300 mb-4">
+                            Cross-platform mobile application for student management system.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-pink-500/20 text-pink-500 rounded-full text-sm">React Native</span>
+                            <span class="px-3 py-1 bg-pink-500/20 text-pink-500 rounded-full text-sm">JavaScript</span>
+                            <span class="px-3 py-1 bg-pink-500/20 text-pink-500 rounded-full text-sm">Firebase</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <button class="flex-1 py-2 bg-pink-500 text-white rounded-lg font-bold hover:bg-pink-500/80 transition-colors">
+                                <i class="fas fa-eye mr-2"></i>View
+                            </button>
+                            <button class="flex-1 py-2 border border-pink-500 text-pink-500 rounded-lg font-bold hover:bg-pink-500 hover:text-white transition-colors">
+                                <i class="fab fa-github mr-2"></i>Code
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -411,38 +521,39 @@
                         </div>
                         <div>
                             <h3 class="font-bold text-cyber-blue">Location</h3>
-                            <p class="text-gray-300">Indonesia</p>
+                            <p class="text-gray-300">Kota Semarang, Jawa Tengah, Indonesia</p>
                         </div>
                     </div>
                     
                     <div class="flex space-x-4">
-                        <a href="#" class="w-12 h-12 bg-cyber-blue rounded-lg flex items-center justify-center hover:scale-110 transition-transform">
+                        <a href="https://github.com/bnrpmbd" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-cyber-blue rounded-lg flex items-center justify-center hover:scale-110 transition-transform" title="GitHub">
                             <i class="fab fa-github text-cyber-dark text-xl"></i>
                         </a>
-                        <a href="#" class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center hover:scale-110 transition-transform">
+                        <a href="https://linkedin.com/in/banarpambudi" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center hover:scale-110 transition-transform" title="LinkedIn">
                             <i class="fab fa-linkedin text-white text-xl"></i>
                         </a>
-                        <a href="#" class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center hover:scale-110 transition-transform">
+                        <a href="https://instagram.com/bnr_pmbd" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center hover:scale-110 transition-transform" title="Instagram">
                             <i class="fab fa-instagram text-white text-xl"></i>
                         </a>
                     </div>
                 </div>
                 
-                <form class="space-y-6">
+                <form id="contact-form" class="space-y-6">
                     <div>
-                        <input type="text" placeholder="Your Name" class="w-full p-4 bg-cyber-dark border border-cyber-blue/20 rounded-lg focus:border-cyber-blue focus:outline-none text-white">
+                        <input type="text" name="name" placeholder="Your Name" required class="w-full p-4 bg-cyber-dark border border-cyber-blue/20 rounded-lg focus:border-cyber-blue focus:outline-none text-white">
                     </div>
                     <div>
-                        <input type="email" placeholder="Your Email" class="w-full p-4 bg-cyber-dark border border-cyber-blue/20 rounded-lg focus:border-cyber-blue focus:outline-none text-white">
+                        <input type="email" name="email" placeholder="Your Email" required class="w-full p-4 bg-cyber-dark border border-cyber-blue/20 rounded-lg focus:border-cyber-blue focus:outline-none text-white">
                     </div>
                     <div>
-                        <input type="text" placeholder="Subject" class="w-full p-4 bg-cyber-dark border border-cyber-blue/20 rounded-lg focus:border-cyber-blue focus:outline-none text-white">
+                        <input type="text" name="subject" placeholder="Subject" required class="w-full p-4 bg-cyber-dark border border-cyber-blue/20 rounded-lg focus:border-cyber-blue focus:outline-none text-white">
                     </div>
                     <div>
-                        <textarea placeholder="Your Message" rows="5" class="w-full p-4 bg-cyber-dark border border-cyber-blue/20 rounded-lg focus:border-cyber-blue focus:outline-none text-white resize-none"></textarea>
+                        <textarea name="message" placeholder="Your Message" rows="5" required class="w-full p-4 bg-cyber-dark border border-cyber-blue/20 rounded-lg focus:border-cyber-blue focus:outline-none text-white resize-none"></textarea>
                     </div>
-                    <button type="submit" class="w-full py-4 bg-gradient-to-r from-cyber-blue to-cyber-purple rounded-lg font-bold hover:scale-105 transition-transform">
-                        Send Message
+                    <button type="submit" id="submit-btn" class="w-full py-4 bg-gradient-to-r from-cyber-blue to-cyber-purple rounded-lg font-bold hover:scale-105 transition-transform">
+                        <span id="submit-text">Send Message</span>
+                        <i id="submit-loader" class="fas fa-spinner fa-spin ml-2 hidden"></i>
                     </button>
                 </form>
             </div>
@@ -461,4 +572,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
