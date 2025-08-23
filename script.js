@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const typewriterText = document.querySelector('.typewriter');
     if (typewriterText) {
         const texts = [
-            'WebDev and Robotics Enthusiast',
+            'WebDev & Robotics Enthusiast',
             'JavaScript & Python Specialist',
             'Undergraduate Student of Electrical Engineering',
             'Problem Solver & Innovation Driver'
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Show success message (you can replace this with actual form submission)
+            // Show success message
             showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
             
             // Reset form
@@ -352,6 +352,4 @@ function createMatrixRain() {
     });
 }
 
-// Uncomment the line below to enable matrix rain effect
-// createMatrixRain();
-
+createMatrixRain();
