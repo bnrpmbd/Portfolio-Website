@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Afiq</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cyber-blue': '#00d2ff',
+                        'cyber-purple': '#6366f1',
+                        'cyber-dark': '#0a0a0a',
+                        'cyber-gray': '#1a1a1a',
+                    },
+                    fontFamily: {
+                        'cyber': ['Orbitron', 'monospace'],
+                    },
+                    animation: {
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'float': 'float 3s ease-in-out infinite',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'typewriter': 'typewriter 4s steps(40) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @keyframes glow {
+            from { box-shadow: 0 0 20px #00d2ff; }
+            to { box-shadow: 0 0 30px #00d2ff, 0 0 40px #6366f1; }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes typewriter {
+            0%, 50% { width: 0; }
+            100% { width: 100%; }
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: 3px solid #00d2ff;
+            white-space: nowrap;
+            animation: typewriter 4s steps(40) infinite;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 210, 255, 0.3);
+        }
+        
+        .neon-border {
+            border: 2px solid transparent;
+            background: linear-gradient(45deg, #00d2ff, #6366f1, #00d2ff) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: destination-out;
+            mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+        }
+        
+        .cyber-grid {
+            background-image: 
+                linear-gradient(rgba(0, 210, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 210, 255, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="bg-cyber-dark text-white font-cyber overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 backdrop-blur-lg bg-cyber-dark/80 border-b border-cyber-blue/20">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-cyber-blue">
+                    <span class="animate-glow">AFIQ</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-cyber-blue transition-colors">Home</a>
+                    <a href="#about" class="hover:text-cyber-blue transition-colors">About</a>
+                    <a href="#projects" class="hover:text-cyber-blue transition-colors">Projects</a>
+                    <a href="#contact" class="hover:text-cyber-blue transition-colors">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-cyber-blue">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cyber-gray/95 backdrop-blur-lg">
+            <div class="px-6 py-4 space-y-4">
+                <a href="#home" class="block hover:text-cyber-blue transition-colors">Home</a>
+                <a href="#about" class="block hover:text-cyber-blue transition-colors">About</a>
+                <a href="#projects" class="block hover:text-cyber-blue transition-colors">Projects</a>
+                <a href="#contact" class="block hover:text-cyber-blue transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative cyber-grid">
+        <div class="absolute inset-0 bg-gradient-to-br from-cyber-dark via-transparent to-cyber-purple/20"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center">
+                <div class="animate-float mb-8">
+                    <div class="w-40 h-40 mx-auto rounded-full border-4 border-cyber-blue/50 p-2 animate-glow">
+                        <div class="w-full h-full rounded-full overflow-hidden bg-gradient-to-br from-cyber-blue to-cyber-purple">
+                            <img src="assets/Foto.jpg" alt="Profile Photo" class="w-full h-full object-cover rounded-full" id="profile-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="w-full h-full flex items-center justify-center" style="display: none;">
+                                <i class="fas fa-user text-6xl text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-slide-up">
+                    Hello, I'm <span class="text-cyber-blue">Banar Pambudi</span>
+                </h1>
+                <div class="text-xl md:text-2xl mb-8 h-8">
+                    <span class="typewriter text-cyber-blue">WebDev and Robotics Enthusiast | Undergraduate student of Electrical Engineering</span>
+                </div>
+                <p class="text-lg md:text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+                    Passionate about creating innovative digital solutions with cutting-edge technology
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="px-8 py-4 bg-gradient-to-r from-cyber-blue to-cyber-purple rounded-lg font-bold hover:scale-105 transition-transform">
+                        View My Work
+                    </button>
+                    <button class="px-8 py-4 border-2 border-cyber-blue text-cyber-blue rounded-lg font-bold hover:bg-cyber-blue hover:text-cyber-dark transition-colors">
+                        Download CV
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute top-20 left-10 animate-float" style="animation-delay: 0.5s;">
+            <div class="w-4 h-4 bg-cyber-blue rounded-full opacity-60"></div>
+        </div>
+        <div class="absolute top-40 right-20 animate-float" style="animation-delay: 1s;">
+            <div class="w-6 h-6 border-2 border-cyber-purple rotate-45 opacity-40"></div>
+        </div>
+        <div class="absolute bottom-40 left-20 animate-float" style="animation-delay: 1.5s;">
+            <div class="w-8 h-8 border-2 border-cyber-blue rounded-full opacity-30"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-cyber-gray/50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">About <span class="text-cyber-blue">Me</span></h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-cyber-blue to-cyber-purple mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <p class="text-lg leading-relaxed text-gray-300">
+                        I am an undergraduate student in Electrical Engineering with a concentration in Information Technology. Currently, I am an active member of the vision program team at EWS Bascorro (Humanoid Soccer Robot), focusing on developing computer vision solutions.
+                    </p>
+                    <p class="text-lg leading-relaxed text-gray-300">
+                        In addition, I am also interested in web development.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mt-8">
+                        <div class="text-center p-4 bg-cyber-dark rounded-lg border border-cyber-blue/20">
+                            <div class="text-3xl font-bold text-cyber-blue">10+</div>
+                            <div class="text-sm text-gray-400">Projects</div>
+                        </div>
+                        <div class="text-center p-4 bg-cyber-dark rounded-lg border border-cyber-blue/20">
+                            <div class="text-3xl font-bold text-cyber-blue">2+</div>
+                            <div class="text-sm text-gray-400">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold mb-6 text-cyber-blue">Skills & Technologies</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span>Python</span>
+                                <span class="text-cyber-blue">90%</span>
+                            </div>
+                            <div class="w-full bg-cyber-dark rounded-full h-2">
+                                <div class="bg-gradient-to-r from-cyber-blue to-cyber-purple h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span>C++</span>
+                                <span class="text-cyber-blue">85%</span>
+                            </div>
+                            <div class="w-full bg-cyber-dark rounded-full h-2">
+                                <div class="bg-gradient-to-r from-cyber-blue to-cyber-purple h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span>JavaScript</span>
+                                <span class="text-cyber-blue">80%</span>
+                            </div>
+                            <div class="w-full bg-cyber-dark rounded-full h-2">
+                                <div class="bg-gradient-to-r from-cyber-blue to-cyber-purple h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span>Tailwind CSS</span>
+                                <span class="text-cyber-blue">75%</span>
+                            </div>
+                            <div class="w-full bg-cyber-dark rounded-full h-2">
+                                <div class="bg-gradient-to-r from-cyber-blue to-cyber-purple h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-cyber-dark">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">My <span class="text-cyber-blue">Projects</span></h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-cyber-blue to-cyber-purple mx-auto mb-8"></div>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                    Here are some projects I have worked on
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="card-hover bg-cyber-gray rounded-xl p-6 border border-cyber-blue/20">
+                    <div class="mb-6">
+                        <div class="w-full h-48 bg-gradient-to-br from-cyber-blue/20 to-cyber-purple/20 rounded-lg overflow-hidden relative group">
+                            <img src="assets/project1.jpg" alt="WhatsApp Bot Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-cyber-blue/20 to-cyber-purple/20" style="display: none;">
+                                <i class="fas fa-robot text-6xl text-cyber-blue"></i>
+                            </div>
+                            <div class="absolute inset-0 bg-cyber-dark/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <div class="text-center">
+                                    <i class="fas fa-search-plus text-3xl text-white mb-2"></i>
+                                    <p class="text-white font-bold">View Project</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-cyber-blue">WhatsApp Bot</h3>
+                    <p class="text-gray-300 mb-4">
+                        Bot WhatsApp otomatis dengan fitur auto-reply, admin panel, dan integrasi API.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-cyber-blue/20 text-cyber-blue rounded-full text-sm">JavaScript</span>
+                        <span class="px-3 py-1 bg-cyber-blue/20 text-cyber-blue rounded-full text-sm">Node.js</span>
+                        <span class="px-3 py-1 bg-cyber-blue/20 text-cyber-blue rounded-full text-sm">API</span>
+                    </div>
+                    <div class="flex gap-4">
+                        <button class="flex-1 py-2 bg-cyber-blue text-cyber-dark rounded-lg font-bold hover:bg-cyber-blue/80 transition-colors">
+                            <i class="fas fa-eye mr-2"></i>View
+                        </button>
+                        <button class="flex-1 py-2 border border-cyber-blue text-cyber-blue rounded-lg font-bold hover:bg-cyber-blue hover:text-cyber-dark transition-colors">
+                            <i class="fab fa-github mr-2"></i>Code
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="card-hover bg-cyber-gray rounded-xl p-6 border border-cyber-blue/20">
+                    <div class="mb-6">
+                        <div class="w-full h-48 bg-gradient-to-br from-cyber-purple/20 to-cyber-blue/20 rounded-lg overflow-hidden relative group">
+                            <img src="assets/project2.jpg" alt="Portfolio Website Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-cyber-purple/20 to-cyber-blue/20" style="display: none;">
+                                <i class="fas fa-briefcase text-6xl text-cyber-purple"></i>
+                            </div>
+                            <div class="absolute inset-0 bg-cyber-dark/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <div class="text-center">
+                                    <i class="fas fa-search-plus text-3xl text-white mb-2"></i>
+                                    <p class="text-white font-bold">View Project</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-cyber-blue">Portfolio Website</h3>
+                    <p class="text-gray-300 mb-4">
+                        Website portfolio modern dengan desain futuristik dan animasi interaktif.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-cyber-purple/20 text-cyber-purple rounded-full text-sm">HTML</span>
+                        <span class="px-3 py-1 bg-cyber-purple/20 text-cyber-purple rounded-full text-sm">CSS</span>
+                        <span class="px-3 py-1 bg-cyber-purple/20 text-cyber-purple rounded-full text-sm">JavaScript</span>
+                    </div>
+                    <div class="flex gap-4">
+                        <button class="flex-1 py-2 bg-cyber-purple text-white rounded-lg font-bold hover:bg-cyber-purple/80 transition-colors">
+                            <i class="fas fa-eye mr-2"></i>View
+                        </button>
+                        <button class="flex-1 py-2 border border-cyber-purple text-cyber-purple rounded-lg font-bold hover:bg-cyber-purple hover:text-white transition-colors">
+                            <i class="fab fa-github mr-2"></i>Code
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="card-hover bg-cyber-gray rounded-xl p-6 border border-cyber-blue/20">
+                    <div class="mb-6">
+                        <div class="w-full h-48 bg-gradient-to-br from-green-500/20 to-blue-500/20 rounded-lg overflow-hidden relative group">
+                            <img src="assets/project3.jpg" alt="Smart City System Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-green-500/20 to-blue-500/20" style="display: none;">
+                                <i class="fas fa-city text-6xl text-green-500"></i>
+                            </div>
+                            <div class="absolute inset-0 bg-cyber-dark/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <div class="text-center">
+                                    <i class="fas fa-search-plus text-3xl text-white mb-2"></i>
+                                    <p class="text-white font-bold">View Project</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-cyber-blue">Smart City System</h3>
+                    <p class="text-gray-300 mb-4">
+                        Sistem smart city untuk kompetisi Gemastik 2025 dengan fitur monitoring kota.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">IoT</span>
+                        <span class="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">React</span>
+                        <span class="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">Dashboard</span>
+                    </div>
+                    <div class="flex gap-4">
+                        <button class="flex-1 py-2 bg-green-500 text-white rounded-lg font-bold hover:bg-green-500/80 transition-colors">
+                            <i class="fas fa-eye mr-2"></i>View
+                        </button>
+                        <button class="flex-1 py-2 border border-green-500 text-green-500 rounded-lg font-bold hover:bg-green-500 hover:text-white transition-colors">
+                            <i class="fab fa-github mr-2"></i>Code
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="px-8 py-4 border-2 border-cyber-blue text-cyber-blue rounded-lg font-bold hover:bg-cyber-blue hover:text-cyber-dark transition-colors">
+                    View All Projects
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-cyber-gray/50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Get In <span class="text-cyber-blue">Touch</span></h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-cyber-blue to-cyber-purple mx-auto mb-8"></div>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                    Let's collaborate and create something amazing together
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="space-y-8">
+                    <div class="flex items-center space-x-4 p-6 bg-cyber-dark rounded-lg border border-cyber-blue/20">
+                        <div class="w-12 h-12 bg-cyber-blue rounded-lg flex items-center justify-center">
+                            <i class="fas fa-envelope text-cyber-dark text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-cyber-blue">Email</h3>
+                            <p class="text-gray-300">banarpambudi094@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center space-x-4 p-6 bg-cyber-dark rounded-lg border border-cyber-blue/20">
+                        <div class="w-12 h-12 bg-cyber-purple rounded-lg flex items-center justify-center">
+                            <i class="fas fa-phone text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-cyber-blue">Phone</h3>
+                            <p class="text-gray-300">+62 821-7619-3344</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center space-x-4 p-6 bg-cyber-dark rounded-lg border border-cyber-blue/20">
+                        <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-map-marker-alt text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-cyber-blue">Location</h3>
+                            <p class="text-gray-300">Indonesia</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-12 h-12 bg-cyber-blue rounded-lg flex items-center justify-center hover:scale-110 transition-transform">
+                            <i class="fab fa-github text-cyber-dark text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center hover:scale-110 transition-transform">
+                            <i class="fab fa-linkedin text-white text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center hover:scale-110 transition-transform">
+                            <i class="fab fa-instagram text-white text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <form class="space-y-6">
+                    <div>
+                        <input type="text" placeholder="Your Name" class="w-full p-4 bg-cyber-dark border border-cyber-blue/20 rounded-lg focus:border-cyber-blue focus:outline-none text-white">
+                    </div>
+                    <div>
+                        <input type="email" placeholder="Your Email" class="w-full p-4 bg-cyber-dark border border-cyber-blue/20 rounded-lg focus:border-cyber-blue focus:outline-none text-white">
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Subject" class="w-full p-4 bg-cyber-dark border border-cyber-blue/20 rounded-lg focus:border-cyber-blue focus:outline-none text-white">
+                    </div>
+                    <div>
+                        <textarea placeholder="Your Message" rows="5" class="w-full p-4 bg-cyber-dark border border-cyber-blue/20 rounded-lg focus:border-cyber-blue focus:outline-none text-white resize-none"></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-4 bg-gradient-to-r from-cyber-blue to-cyber-purple rounded-lg font-bold hover:scale-105 transition-transform">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-cyber-dark border-t border-cyber-blue/20">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-400">
+                © 2025 Banar Pambudi Portfolio. Made with <span class="text-red-500">❤</span> and <span class="text-cyber-blue">JavaScript</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
