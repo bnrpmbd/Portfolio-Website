@@ -16,7 +16,8 @@
                         'cyber-gray': '#1a1a1a',
                     },
                     fontFamily: {
-                        'cyber': ['Orbitron', 'monospace'],
+                        'cyber': ['Inter', 'system-ui', 'sans-serif'],
+                        'cyber-heading': ['Exo 2', 'Inter', 'sans-serif'],
                     },
                     animation: {
                         'glow': 'glow 2s ease-in-out infinite alternate',
@@ -28,7 +29,7 @@
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Exo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 
@@ -59,6 +60,17 @@
         @keyframes slideUp {
             from { opacity: 0; transform: translateY(50px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Initial state untuk sections agar tidak terlihat dulu sebelum animasi */
+        section:not(#home) {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        
+        /* State setelah animasi dimulai */
+        section.animate-slide-up {
+            animation: slideUp 0.8s ease-out forwards;
         }
         
         .typewriter {
@@ -128,6 +140,35 @@
                 linear-gradient(90deg, rgba(0, 210, 255, 0.1) 1px, transparent 1px);
             background-size: 20px 20px;
         }
+        
+        /* Custom font styling untuk readability */
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            letter-spacing: 0.01em;
+        }
+        
+        /* Headings menggunakan font yang lebih stylish tapi tetap readable */
+        h1, h2, h3, h4, h5, h6, .font-cyber-heading {
+            font-family: 'Exo 2', 'Inter', sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+        
+        /* Navigation dan elemen penting*/
+        .nav-brand, .typewriter, .cyber-text {
+            font-family: 'Exo 2', 'Inter', sans-serif;
+            font-weight: 600;
+        }
+        
+        /* Static glow effect untuk logo */
+        .logo-glow-static {
+            box-shadow: 
+                0 0 8px rgba(0, 210, 255, 0.3),
+                0 0 16px rgba(0, 210, 255, 0.2),
+                0 0 24px rgba(0, 210, 255, 0.1);
+        }
     </style>
 </head>
 <body class="bg-cyber-dark text-white font-cyber overflow-x-hidden">
@@ -135,8 +176,14 @@
     <nav class="fixed top-0 w-full z-50 backdrop-blur-lg bg-cyber-dark/80 border-b border-cyber-blue/20">
         <div class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
-                <div class="text-2xl font-bold text-cyber-blue">
-                    <span class="animate-glow">BNRPMBD</span>
+                <div class="text-2xl font-bold text-cyber-blue cyber-text nav-brand flex items-center space-x-1">
+                    <div class="w-10 h-10 flex items-center justify-center rounded-full overflow-hidden border border-cyber-blue/30 p-[1px] logo-glow-static">
+                        <img src="assets/Logo_Portfolio.jpg" alt="BNRPMBD Logo" class="w-full h-full object-cover rounded-full" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-cyber-blue to-cyber-purple rounded-full" style="display: none;">
+                            <i class="fas fa-code text-white text-xl"></i>
+                        </div>
+                    </div>
+                    <span>BNRPMBD</span>
                 </div>
                 <div class="hidden md:flex space-x-8">
                     <a href="#home" class="hover:text-cyber-blue transition-colors">Home</a>
@@ -163,8 +210,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center relative cyber-grid pt-20 md:pt-0">
-        <div class="absolute inset-0 bg-gradient-to-br from-cyber-dark via-transparent to-cyber-purple/20"></div>
+    <section id="home" class="min-h-screen flex items-center justify-center relative bg-cyber-dark pt-20 md:pt-0">
         <div class="container mx-auto px-4 md:px-6 relative z-10">
             <div class="text-center">
                 <div class="animate-float mb-8 mt-8 md:mt-0">
@@ -210,7 +256,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-cyber-gray/50">
+    <section id="about" class="py-20 bg-cyber-dark">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold mb-4">About <span class="text-cyber-blue">Me</span></h2>
@@ -524,7 +570,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-cyber-gray/50">
+    <section id="contact" class="py-20 bg-cyber-dark">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold mb-4">Get In <span class="text-cyber-blue">Touch</span></h2>
@@ -602,8 +648,9 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-8 bg-cyber-dark border-t border-cyber-blue/20">
-        <div class="container mx-auto px-6 text-center">
+    <footer class="py-8 bg-cyber-dark border-t border-cyber-blue/20 relative">
+        <div class="absolute inset-0 bg-gradient-to-t from-cyber-purple/20 via-transparent to-cyber-dark"></div>
+        <div class="container mx-auto px-6 text-center relative z-10">
             <p class="text-gray-400">
                 © 2025 Banar Pambudi Portfolio. Made with <span class="text-red-500">❤</span> and <span class="text-cyber-blue">JavaScript</span>
             </p>
@@ -613,4 +660,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
