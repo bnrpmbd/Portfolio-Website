@@ -483,7 +483,7 @@ const projectsData = {
         title: "Portfolio Website",
         description: [
             "This portfolio website is a personal brand site built to present projects, skills, and experience in a concise and visually striking way. The design blends a clean layout with cyberpunk-inspired accents to communicate technical fluency and creative taste. The site emphasizes usability, responsiveness, and performance so that visitors and recruiters can quickly evaluate capabilities and navigate to examples of work.",
-            "Visitors arrive at a hero section with a typewriter-style headline and short bio, then can scroll or use the navigation to jump to About, Skills, Projects, Experience, and Contact sections. Projects are shown as interactive cards that expand or open modals with details and links (live/demo/code). Skills display animated progress indicators. A contact form enables visitors to compose a message with immediate client-side validation and feedback.",
+            "Visitors arrive at a Home section with a typewriter-style headline and short bio, then can scroll or use the navigation to jump to About, Skills, Projects, Experience, and Contact sections. Projects are shown as interactive cards that expand or open modals with details and links (live/demo/code). Skills display animated progress indicators. A contact form enables visitors to compose a message with immediate client-side validation and feedback.",
             "Markup & styling: semantic HTML5 structure with modular CSS; utility-first patterns are used for rapid layout and consistent spacing.",
             "Interactivity: lightweight vanilla JavaScript controls navigation behavior, scroll-triggered animations (intersection observer), typewriter effect, and modal/project interactions.",
             "Assets & fonts: Google Fonts for typographic polish and Font Awesome (or SVG icons) for crisp icons without heavy dependency overhead.",
@@ -562,8 +562,8 @@ const projectsData = {
     project5: {
         title: "Portfolio Website (Beta)",
         description: [
-            "Portfolio Website — Beta is a static personal website built as a practical exercise while learning HTML and CSS. The site demonstrates core front-end fundamentals—semantic HTML structure, responsive layout with Bootstrap, modular CSS for spacing and colors, and small JavaScript enhancements for interactivity and animations. It’s designed as a clean one-page portfolio to present a short bio, sample projects, and a contact form.",
-            "Visitors land on a hero (jumbotron) with profile image and headline, scroll to read About details, inspect project cards in the Projects section, and send messages via the Contact form. Visual polish is added with scroll-triggered AOS animations and a GSAP-driven animated subtitle to make the interface feel more dynamic. Successful contact submissions trigger a visible alert and reset the form.",
+            "Portfolio Website (Beta) is a static personal website built as a practical exercise while learning HTML and CSS. The site demonstrates core front-end fundamentals—semantic HTML structure, responsive layout with Bootstrap, modular CSS for spacing and colors, and small JavaScript enhancements for interactivity and animations. It’s designed as a clean one-page portfolio to present a short bio, sample projects, and a contact form.",
+            "Visitors land on a Home (Jumbotron) with profile image and headline, scroll to read About details, inspect project cards in the Projects section, and send messages via the Contact form. Visual polish is added with scroll-triggered AOS animations and a GSAP-driven animated subtitle to make the interface feel more dynamic. Successful contact submissions trigger a visible alert and reset the form.",
             "Markup & layout: built with HTML5 and Bootstrap 5 components (responsive navbar, container/rows/cols, and card components for projects).",
             "Styling: a concise style.css controls section spacing, background colors, and footer styles—keeps styles easy to read and modify as you learn.",
             "Interactivity: vanilla JS handles form submit via fetch() to a Google Apps Script endpoint, toggles loading/success states, and initializes AOS. GSAP (with TextPlugin) animates hero text and adds entrance effects for key elements.",
@@ -597,7 +597,7 @@ const projectsData = {
         ],
         images: [
             "assets/Projects/Rangkaian_HandDryer.png",
-            "assets/Projects/SourceCode_HandDryer.png",
+            "assets/Projects/SourceCode_HandDryer.png"
         ],
         techStack: ["Proteus", "8051 (Keil .a51 assembly)", "Virtual instruments", "Basic electromechanical components"],
         features: [
@@ -622,7 +622,7 @@ const projectsData = {
         ],
         images: [
             "assets/Projects/Rangkaian_ParkirOtomatis.png",
-            "assets/Projects/SourceCode_ParkirOtomatis.png",
+            "assets/Projects/SourceCode_ParkirOtomatis.png"
         ],
         techStack: ["Proteus", "8051 (Keil .a51 assembly)", "Common simulated components"],
         features: [
@@ -634,6 +634,54 @@ const projectsData = {
             "Safety/timeouts — configurable maximum actuator runtime and automatic fault handling to prevent stuck states",
             "Proteus testbench & debugging — virtual instruments for waveform/state inspection, enabling repeatable testing before hardware",
             "Didactic assembly code — compact .a51 firmware illustrating low-level embedded topics: timers, I/O, and finite-state machines"
+        ],
+    },
+    project8: {
+        title: "YOLOv5 Object Detection in ROS2",
+        description: [
+            "This project implements a ROS2-integrated YOLOv5 object detection system designed for real-time robotic perception tasks. Built using rclpy, OpenCV, and PyTorch, the system consists of two main nodes:",
+            "✅Image Publisher Node — captures frames from a webcam or video input and publishes them as ROS2 image messages.",
+            "✅YOLOv5 Detector Node — subscribes to image topics, preprocesses frames, performs YOLOv5 inference, and overlays detection results (bounding boxes, class labels, and confidence values).",
+            "The system supports dynamic model loading, GPU acceleration, and stability checks. Results are displayed in an OpenCV visualization window, with FPS monitoring to evaluate performance.",
+            "",
+            "This setup is particularly valuable in robotics research, autonomous navigation, and human-robot interaction, as it provides a modular, plug-and-play perception component within the ROS2 ecosystem. The use of YOLOv5 ensures high detection accuracy across multiple object classes, while ROS2 integration guarantees interoperability with other robotic software stacks."
+        ],
+        images: [
+            "assets/Projects/YOLOv5.jpg",
+            "assets/Projects/YOLOv5.mp4"
+        ],
+        techStack: ["ROS2", "rclpy", "YOLOv5", "PyThorch", "OpenCV", "CvBridge", "NumPy", "SciPy utilities"],
+        features: [
+            "ROS2 Node Architecture — modular publisher and detector nodes (image_publisher_node, yolov5_detector_node) for clean integration in robotics pipelines",
+            "Real-time Object Detection — YOLOv5 model loaded via PyTorch with GPU/CPU support, running live inference on camera frames",
+            "Flexible Model Loading — automatic search for weights file (.pt) in local src or ROS2 package share directory, ensuring smooth deployment",
+            "Interactive Visualization — OpenCV display with bounding boxes, labels, and confidence scores overlaid on detected objects",
+            "Performance Monitoring — frame rate (FPS) overlay for real-time performance tracking",
+            "Error Handling & Logging — informative logs for missing weights, camera access errors, or invalid detections",
+            "ROS2 Ecosystem Ready — publishes and subscribes to sensor_msgs/Image topics, making it compatible with other ROS2 nodes (navigation, SLAM, etc.)"
+        ],
+    },
+    project9: {
+        title: "YOLOv12 Object Detection in ROS2",
+        description: [
+            "This project provides a ROS2-integrated YOLOv12 object detection system, leveraging Ultralytics’ latest YOLOv12 model for accurate and efficient real-time perception. Designed as a standalone ROS2 node (yolov12_detector_node), it captures video from a webcam or file, runs inference, and publishes annotated results to the ROS2 network.",
+            "The node is configurable through ROS2 parameters: users can specify the video source, YOLOv12 weights file, image size, and detection confidence threshold. Detected objects are visualized with bounding boxes, class labels, and confidence scores overlaid on the frame. The node also computes and displays real-time FPS for performance tracking.",
+            "Results are published to the detection_output ROS2 topic, allowing downstream modules (e.g., navigation, tracking, or manipulation) to subscribe and utilize object detection data. The use of Ultralytics YOLOv12 ensures modern detection accuracy and speed, while the ROS2 ecosystem provides modularity and interoperability.",
+            "This system is especially valuable for robotics research, autonomous systems, and education, as it bridges state-of-the-art computer vision with ROS2 middleware in a lightweight and deployable package."
+        ],
+        images: [
+            "assets/Projects/YOLOv12.jpg",
+            "assets/Projects/YOLOv12.mp4"
+        ],
+        techStack: ["ROS2", "rclpy", "YOLOv12", "Ultralytics", "OpenCV", "CvBridge", "NumPy", "Torch (via Ultralytics)"],
+        features: [
+            "ROS2 Node Architecture — implemented as a dedicated detection node (yolov12_detector_node) for seamless integration with other ROS2 packages",
+            "YOLOv12 Model Inference — loads pretrained YOLOv12 weights (bestv12.pt) and performs fast, accurate detection with bounding boxes and class labels",
+            "Configurable Parameters — runtime parameters for input source (webcam/video), confidence threshold, image size, and weights path",
+            "Real-time Visualization — OpenCV window shows annotated detections with class labels and FPS overlay for performance monitoring",
+            "ROS2 Image Publishing — annotated detection results published as sensor_msgs/Image to a ROS2 topic (detection_output) for downstream robotic modules",
+            "Performance Feedback — FPS calculation displayed directly on output frames to monitor system throughput",
+            "Error Handling & Logging — informative logs for model loading, video source errors, and runtime issues"
         ],
     }
 };
@@ -707,27 +755,64 @@ document.addEventListener('DOMContentLoaded', function() {
         // Update project gallery
         const gallery = document.getElementById('project-gallery').querySelector('.grid');
         gallery.innerHTML = '';
-        project.images.forEach((image, index) => {
-            const imgDiv = document.createElement('div');
-            imgDiv.className = 'relative group cursor-pointer';
-            imgDiv.innerHTML = `
-                <img src="${image}" alt="${project.title} - Image ${index + 1}" 
-                     class="w-full h-48 object-cover rounded-lg group-hover:scale-105 transition-transform duration-300"
-                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <div class="w-full h-48 bg-gradient-to-br from-cyber-blue/20 to-cyber-purple/20 rounded-lg flex items-center justify-center" style="display: none;">
-                    <i class="fas fa-image text-4xl text-cyber-blue"></i>
-                </div>
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
-                    <i class="fas fa-search-plus text-2xl text-white"></i>
-                </div>
-            `;
+        project.images.forEach((media, index) => {
+            const mediaDiv = document.createElement('div');
+            mediaDiv.className = 'relative group cursor-pointer';
             
-            // Add click event for lightbox
-            imgDiv.addEventListener('click', function() {
-                openLightbox(image, `${project.title} - Image ${index + 1}`);
-            });
+            // Check if the file is a video
+            const isVideo = media.toLowerCase().endsWith('.mp4') || media.toLowerCase().endsWith('.webm') || media.toLowerCase().endsWith('.mov');
             
-            gallery.appendChild(imgDiv);
+            if (isVideo) {
+                mediaDiv.innerHTML = `
+                    <video class="w-full h-48 object-cover rounded-lg group-hover:scale-105 transition-transform duration-300" muted loop>
+                        <source src="${media}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="w-full h-48 bg-gradient-to-br from-cyber-blue/20 to-cyber-purple/20 rounded-lg flex items-center justify-center" style="display: none;">
+                        <i class="fas fa-video text-4xl text-cyber-blue"></i>
+                    </div>
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fas fa-play text-2xl text-white mb-1"></i>
+                            <p class="text-white text-sm">Play Video</p>
+                        </div>
+                    </div>
+                `;
+                
+                // Add hover effect to play video preview
+                const video = mediaDiv.querySelector('video');
+                mediaDiv.addEventListener('mouseenter', function() {
+                    video.play();
+                });
+                mediaDiv.addEventListener('mouseleave', function() {
+                    video.pause();
+                    video.currentTime = 0;
+                });
+                
+                // Add click event for video lightbox
+                mediaDiv.addEventListener('click', function() {
+                    openVideoLightbox(media, `${project.title} - Video ${index + 1}`);
+                });
+            } else {
+                mediaDiv.innerHTML = `
+                    <img src="${media}" alt="${project.title} - Image ${index + 1}" 
+                         class="w-full h-48 object-cover rounded-lg group-hover:scale-105 transition-transform duration-300"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="w-full h-48 bg-gradient-to-br from-cyber-blue/20 to-cyber-purple/20 rounded-lg flex items-center justify-center" style="display: none;">
+                        <i class="fas fa-image text-4xl text-cyber-blue"></i>
+                    </div>
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-search-plus text-2xl text-white"></i>
+                    </div>
+                `;
+                
+                // Add click event for image lightbox
+                mediaDiv.addEventListener('click', function() {
+                    openLightbox(media, `${project.title} - Image ${index + 1}`);
+                });
+            }
+            
+            gallery.appendChild(mediaDiv);
         });
 
         // Update description
@@ -786,13 +871,64 @@ document.addEventListener('DOMContentLoaded', function() {
         const lightboxImage = document.getElementById('lightbox-image');
         const lightboxCaption = document.getElementById('lightbox-caption');
         
+        // Hide video container if exists
+        const videoContainer = lightboxModal.querySelector('.video-container');
+        if (videoContainer) {
+            videoContainer.style.display = 'none';
+        }
+        
+        // Show image container
+        lightboxImage.style.display = 'block';
         lightboxImage.src = imageSrc;
+        lightboxCaption.textContent = caption;
+        lightboxModal.classList.remove('hidden');
+    }
+
+    function openVideoLightbox(videoSrc, caption) {
+        const lightboxModal = document.getElementById('image-lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+        
+        // Hide image
+        lightboxImage.style.display = 'none';
+        
+        // Create or update video container
+        let videoContainer = lightboxModal.querySelector('.video-container');
+        if (!videoContainer) {
+            videoContainer = document.createElement('div');
+            videoContainer.className = 'video-container w-full max-h-[80vh] flex items-center justify-center';
+            videoContainer.innerHTML = `
+                <video class="w-full h-auto max-h-[80vh] object-contain rounded-lg" controls autoplay>
+                    <source src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            `;
+            lightboxImage.parentNode.insertBefore(videoContainer, lightboxImage);
+        }
+        
+        // Update video source and show container
+        const video = videoContainer.querySelector('video');
+        video.querySelector('source').src = videoSrc;
+        video.load(); // Reload the video with new source
+        videoContainer.style.display = 'flex';
+        
         lightboxCaption.textContent = caption;
         lightboxModal.classList.remove('hidden');
     }
 
     function closeLightbox() {
         const lightboxModal = document.getElementById('image-lightbox');
+        
+        // Stop video if playing
+        const videoContainer = lightboxModal.querySelector('.video-container');
+        if (videoContainer) {
+            const video = videoContainer.querySelector('video');
+            if (video) {
+                video.pause();
+                video.currentTime = 0;
+            }
+        }
+        
         lightboxModal.classList.add('hidden');
     }
 });
@@ -835,27 +971,64 @@ function openProjectModalExternal(projectId) {
     // Update project gallery
     const gallery = document.getElementById('project-gallery').querySelector('.grid');
     gallery.innerHTML = '';
-    project.images.forEach((image, index) => {
-        const imgDiv = document.createElement('div');
-        imgDiv.className = 'relative group cursor-pointer';
-        imgDiv.innerHTML = `
-            <img src="${image}" alt="${project.title} - Image ${index + 1}" 
-                 class="w-full h-48 object-cover rounded-lg group-hover:scale-105 transition-transform duration-300"
-                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="w-full h-48 bg-gradient-to-br from-cyber-blue/20 to-cyber-purple/20 rounded-lg flex items-center justify-center" style="display: none;">
-                <i class="fas fa-image text-4xl text-cyber-blue"></i>
-            </div>
-            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
-                <i class="fas fa-search-plus text-2xl text-white"></i>
-            </div>
-        `;
+    project.images.forEach((media, index) => {
+        const mediaDiv = document.createElement('div');
+        mediaDiv.className = 'relative group cursor-pointer';
         
-        // Add click event for lightbox
-        imgDiv.addEventListener('click', function() {
-            openLightboxExternal(image, `${project.title} - Image ${index + 1}`);
-        });
+        // Check if the file is a video
+        const isVideo = media.toLowerCase().endsWith('.mp4') || media.toLowerCase().endsWith('.webm') || media.toLowerCase().endsWith('.mov');
         
-        gallery.appendChild(imgDiv);
+        if (isVideo) {
+            mediaDiv.innerHTML = `
+                <video class="w-full h-48 object-cover rounded-lg group-hover:scale-105 transition-transform duration-300" muted loop>
+                    <source src="${media}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="w-full h-48 bg-gradient-to-br from-cyber-blue/20 to-cyber-purple/20 rounded-lg flex items-center justify-center" style="display: none;">
+                    <i class="fas fa-video text-4xl text-cyber-blue"></i>
+                </div>
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
+                    <div class="text-center">
+                        <i class="fas fa-play text-2xl text-white mb-1"></i>
+                        <p class="text-white text-sm">Play Video</p>
+                    </div>
+                </div>
+            `;
+            
+            // Add hover effect to play video preview
+            const video = mediaDiv.querySelector('video');
+            mediaDiv.addEventListener('mouseenter', function() {
+                video.play();
+            });
+            mediaDiv.addEventListener('mouseleave', function() {
+                video.pause();
+                video.currentTime = 0;
+            });
+            
+            // Add click event for video lightbox
+            mediaDiv.addEventListener('click', function() {
+                openVideoLightboxExternal(media, `${project.title} - Video ${index + 1}`);
+            });
+        } else {
+            mediaDiv.innerHTML = `
+                <img src="${media}" alt="${project.title} - Image ${index + 1}" 
+                     class="w-full h-48 object-cover rounded-lg group-hover:scale-105 transition-transform duration-300"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="w-full h-48 bg-gradient-to-br from-cyber-blue/20 to-cyber-purple/20 rounded-lg flex items-center justify-center" style="display: none;">
+                    <i class="fas fa-image text-4xl text-cyber-blue"></i>
+                </div>
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-search-plus text-2xl text-white"></i>
+                </div>
+            `;
+            
+            // Add click event for image lightbox
+            mediaDiv.addEventListener('click', function() {
+                openLightboxExternal(media, `${project.title} - Image ${index + 1}`);
+            });
+        }
+        
+        gallery.appendChild(mediaDiv);
     });
 
     // Update description
@@ -910,7 +1083,48 @@ function openLightboxExternal(imageSrc, caption) {
     const lightboxImage = document.getElementById('lightbox-image');
     const lightboxCaption = document.getElementById('lightbox-caption');
     
+    // Hide video container if exists
+    const videoContainer = lightboxModal.querySelector('.video-container');
+    if (videoContainer) {
+        videoContainer.style.display = 'none';
+    }
+    
+    // Show image container
+    lightboxImage.style.display = 'block';
     lightboxImage.src = imageSrc;
+    lightboxCaption.textContent = caption;
+    lightboxModal.classList.remove('hidden');
+}
+
+// External version of openVideoLightbox
+function openVideoLightboxExternal(videoSrc, caption) {
+    const lightboxModal = document.getElementById('image-lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    
+    // Hide image
+    lightboxImage.style.display = 'none';
+    
+    // Create or update video container
+    let videoContainer = lightboxModal.querySelector('.video-container');
+    if (!videoContainer) {
+        videoContainer = document.createElement('div');
+        videoContainer.className = 'video-container w-full max-h-[80vh] flex items-center justify-center';
+        videoContainer.innerHTML = `
+            <video class="w-full h-auto max-h-[80vh] object-contain rounded-lg" controls autoplay>
+                <source src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        `;
+        lightboxImage.parentNode.insertBefore(videoContainer, lightboxImage);
+    }
+    
+    // Update video source and show container
+    const video = videoContainer.querySelector('video');
+    video.querySelector('source').src = videoSrc;
+    video.load(); // Reload the video with new source
+    videoContainer.style.display = 'flex';
+    
     lightboxCaption.textContent = caption;
     lightboxModal.classList.remove('hidden');
 }
