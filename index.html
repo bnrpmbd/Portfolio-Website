@@ -47,6 +47,16 @@
     <link rel="manifest" href="assets/site.webmanifest">
 
     <style>
+        /* Ensure page always starts from top */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            scroll-behavior: smooth;
+            overscroll-behavior: none;
+        }
+        
         @keyframes glow {
             from { box-shadow: 0 0 20px #00d2ff; }
             to { box-shadow: 0 0 30px #00d2ff, 0 0 40px #6366f1; }
@@ -348,8 +358,8 @@
                 <!-- Project 1 -->
                 <div class="card-hover bg-cyber-gray rounded-xl p-6 border border-cyber-blue/20">
                     <div class="mb-6">
-                        <div class="w-full h-48 bg-gradient-to-br from-cyber-blue/20 to-cyber-purple/20 rounded-lg overflow-hidden relative group">
-                            <img src="assets/project1.jpg" alt="WhatsApp Bot Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-48 bg-gradient-to-br from-cyber-blue/20 to-cyber-purple/20 rounded-lg overflow-hidden relative group cursor-pointer view-project-area" data-project="project1">
+                            <img src="assets/Projects/Form_Laporan_Anomali.png" alt="Form Laporan Anomali Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-cyber-blue/20 to-cyber-purple/20" style="display: none;">
                                 <i class="fas fa-robot text-6xl text-cyber-blue"></i>
                             </div>
@@ -361,30 +371,31 @@
                             </div>
                         </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-cyber-blue">WhatsApp Bot</h3>
+                    <h3 class="text-xl font-bold mb-3 text-cyber-blue">Website Form Laporan Anomali</h3>
                     <p class="text-gray-300 mb-4">
-                        Bot WhatsApp otomatis dengan fitur auto-reply, admin panel, dan integrasi API.
+                        A Google Apps Script-based web reporting application to collect, validate, and summarize morning/evening anomaly reports in a structured manner into Google Spreadsheets.
                     </p>
                     <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-3 py-1 bg-cyber-blue/20 text-cyber-blue rounded-full text-sm">JavaScript</span>
-                        <span class="px-3 py-1 bg-cyber-blue/20 text-cyber-blue rounded-full text-sm">Node.js</span>
-                        <span class="px-3 py-1 bg-cyber-blue/20 text-cyber-blue rounded-full text-sm">API</span>
+                        <span class="px-3 py-1 bg-cyber-blue/20 text-cyber-blue rounded-full text-sm">Google Apps Script</span>
+                        <span class="px-3 py-1 bg-cyber-blue/20 text-cyber-blue rounded-full text-sm">HTML5/CSS3</span>
+                        <span class="px-3 py-1 bg-cyber-blue/20 text-cyber-blue rounded-full text-sm">JavaScript (Vanilla)</span>
+                        <span class="px-3 py-1 bg-cyber-blue/20 text-cyber-blue rounded-full text-sm">Google Sheets</span>
                     </div>
                     <div class="flex gap-4">
-                        <button class="flex-1 py-2 bg-cyber-blue text-cyber-dark rounded-lg font-bold hover:bg-cyber-blue/80 transition-colors">
+                        <button class="view-project-btn flex-1 py-2 bg-cyber-blue text-cyber-dark rounded-lg font-bold hover:bg-cyber-blue/80 transition-colors" data-project="project1">
                             <i class="fas fa-eye mr-2"></i>View
                         </button>
-                        <button class="flex-1 py-2 border border-cyber-blue text-cyber-blue rounded-lg font-bold hover:bg-cyber-blue hover:text-cyber-dark transition-colors">
+                        <a href="https://github.com/bnrpmbd/Form-Laporan-Anomali" target="_blank" class="flex-1 py-2 border border-cyber-blue text-cyber-blue rounded-lg font-bold hover:bg-cyber-blue hover:text-cyber-dark transition-colors text-center">
                             <i class="fab fa-github mr-2"></i>Code
-                        </button>
+                        </a>
                     </div>
                 </div>
                 
                 <!-- Project 2 -->
                 <div class="card-hover bg-cyber-gray rounded-xl p-6 border border-cyber-blue/20">
                     <div class="mb-6">
-                        <div class="w-full h-48 bg-gradient-to-br from-cyber-purple/20 to-cyber-blue/20 rounded-lg overflow-hidden relative group">
-                            <img src="assets/project2.jpg" alt="Portfolio Website Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-48 bg-gradient-to-br from-cyber-purple/20 to-cyber-blue/20 rounded-lg overflow-hidden relative group cursor-pointer view-project-area" data-project="project2">
+                            <img src="assets/Projects/Website_Portofolio.png" alt="Portfolio Website Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-cyber-purple/20 to-cyber-blue/20" style="display: none;">
                                 <i class="fas fa-briefcase text-6xl text-cyber-purple"></i>
                             </div>
@@ -398,28 +409,30 @@
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-cyber-blue">Portfolio Website</h3>
                     <p class="text-gray-300 mb-4">
-                        Website portfolio modern dengan desain futuristik dan animasi interaktif.
+                        A modern, responsive personal portfolio website with a futuristic/cyberpunk visual style, smooth animations, and clear sections for About, Skills, Projects, Experience, and Contact — optimized for quick navigation and showcasing work.
                     </p>
                     <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-3 py-1 bg-cyber-purple/20 text-cyber-purple rounded-full text-sm">HTML</span>
-                        <span class="px-3 py-1 bg-cyber-purple/20 text-cyber-purple rounded-full text-sm">CSS</span>
-                        <span class="px-3 py-1 bg-cyber-purple/20 text-cyber-purple rounded-full text-sm">JavaScript</span>
+                        <span class="px-3 py-1 bg-cyber-purple/20 text-cyber-purple rounded-full text-sm">HTML5</span>
+                        <span class="px-3 py-1 bg-cyber-purple/20 text-cyber-purple rounded-full text-sm">CSS3</span>
+                        <span class="px-3 py-1 bg-cyber-purple/20 text-cyber-purple rounded-full text-sm">Vanilla JavaScript</span>
+                        <span class="px-3 py-1 bg-cyber-purple/20 text-cyber-purple rounded-full text-sm">Google Fonts/Font Awesome</span>
+                        <span class="px-3 py-1 bg-cyber-purple/20 text-cyber-purple rounded-full text-sm">GitHub Pages</span>
                     </div>
                     <div class="flex gap-4">
-                        <button class="flex-1 py-2 bg-cyber-purple text-white rounded-lg font-bold hover:bg-cyber-purple/80 transition-colors">
+                        <button class="view-project-btn flex-1 py-2 bg-cyber-purple text-white rounded-lg font-bold hover:bg-cyber-purple/80 transition-colors" data-project="project2">
                             <i class="fas fa-eye mr-2"></i>View
                         </button>
-                        <button class="flex-1 py-2 border border-cyber-purple text-cyber-purple rounded-lg font-bold hover:bg-cyber-purple hover:text-white transition-colors">
+                        <a href="https://github.com/bnrpmbd/Portfolio-Website" target="_blank" class="flex-1 py-2 border border-cyber-purple text-cyber-purple rounded-lg font-bold hover:bg-cyber-purple hover:text-white transition-colors text-center">
                             <i class="fab fa-github mr-2"></i>Code
-                        </button>
+                        </a>
                     </div>
                 </div>
                 
                 <!-- Project 3 -->
                 <div class="card-hover bg-cyber-gray rounded-xl p-6 border border-cyber-blue/20">
                     <div class="mb-6">
-                        <div class="w-full h-48 bg-gradient-to-br from-green-500/20 to-blue-500/20 rounded-lg overflow-hidden relative group">
-                            <img src="assets/project3.jpg" alt="Smart City System Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-48 bg-gradient-to-br from-green-500/20 to-blue-500/20 rounded-lg overflow-hidden relative group cursor-pointer view-project-area" data-project="project3">
+                            <img src="assets/Projects/Kalkulator_Statis.png" alt="Matrix Calculator Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-green-500/20 to-blue-500/20" style="display: none;">
                                 <i class="fas fa-city text-6xl text-green-500"></i>
                             </div>
@@ -431,22 +444,22 @@
                             </div>
                         </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-cyber-blue">Smart City System</h3>
+                    <h3 class="text-xl font-bold mb-3 text-cyber-blue">Matrix Calculator - Static Web App</h3>
                     <p class="text-gray-300 mb-4">
-                        Sistem smart city untuk kompetisi Gemastik 2025 dengan fitur monitoring kota.
+                        A lightweight static web matrix calculator built with HTML, CSS, and vanilla JavaScript, supporting eigenvalues/eigenvectors, several matrix decompositions (LU, Cholesky, Doolittle, Crout), and a clean, responsive UI for quick numerical exploration.
                     </p>
                     <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">IoT</span>
-                        <span class="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">React</span>
-                        <span class="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">Dashboard</span>
+                        <span class="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">HTML5/CSS3</span>
+                        <span class="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">JavaScript (Vanilla) + math.js</span>
+                        <span class="px-3 py-1 bg-green-500/20 text-green-500 rounded-full text-sm">Github Pages</span>
                     </div>
                     <div class="flex gap-4">
-                        <button class="flex-1 py-2 bg-green-500 text-white rounded-lg font-bold hover:bg-green-500/80 transition-colors">
+                        <button class="view-project-btn flex-1 py-2 bg-green-500 text-white rounded-lg font-bold hover:bg-green-500/80 transition-colors" data-project="project3">
                             <i class="fas fa-eye mr-2"></i>View
                         </button>
-                        <button class="flex-1 py-2 border border-green-500 text-green-500 rounded-lg font-bold hover:bg-green-500 hover:text-white transition-colors">
+                        <a href="https://github.com/bnrpmbd/Kalkulator-Matriks" target="_blank" class="flex-1 py-2 border border-green-500 text-green-500 rounded-lg font-bold hover:bg-green-500 hover:text-white transition-colors text-center">
                             <i class="fab fa-github mr-2"></i>Code
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -463,8 +476,8 @@
                     <!-- Project 4 -->
                     <div class="card-hover bg-cyber-gray rounded-xl p-6 border border-cyber-blue/20">
                         <div class="mb-6">
-                            <div class="w-full h-48 bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-lg overflow-hidden relative group">
-                                <img src="assets/project4.jpg" alt="Humanoid Robot Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="w-full h-48 bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-lg overflow-hidden relative group cursor-pointer view-project-area" data-project="project4">
+                                <img src="assets/Projects/Kalkulator_Python.png" alt="Streamlit Matrix Calculator" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                                 <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-orange-500/20 to-red-500/20" style="display: none;">
                                     <i class="fas fa-robot text-6xl text-orange-500"></i>
                                 </div>
@@ -476,30 +489,30 @@
                                 </div>
                             </div>
                         </div>
-                        <h3 class="text-xl font-bold mb-3 text-cyber-blue">Humanoid Soccer Robot</h3>
+                        <h3 class="text-xl font-bold mb-3 text-cyber-blue">Streamlit Matrix Calculator</h3>
                         <p class="text-gray-300 mb-4">
-                            Computer vision system for humanoid soccer robot in EWS Bascorro team.
+                            A responsive Streamlit app for matrix analysis (eigenvalues/vectors, diagonalization, LU, Cholesky, Doolittle, Crout) built with Python, NumPy, and SciPy — ideal for quick interactive exploration and teaching/demo purposes.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-orange-500/20 text-orange-500 rounded-full text-sm">Python</span>
-                            <span class="px-3 py-1 bg-orange-500/20 text-orange-500 rounded-full text-sm">OpenCV</span>
-                            <span class="px-3 py-1 bg-orange-500/20 text-orange-500 rounded-full text-sm">Computer Vision</span>
+                            <span class="px-3 py-1 bg-orange-500/20 text-orange-500 rounded-full text-sm">Python/Streamlit</span>
+                            <span class="px-3 py-1 bg-orange-500/20 text-orange-500 rounded-full text-sm">NumPy/SciPy</span>
+                            <span class="px-3 py-1 bg-orange-500/20 text-orange-500 rounded-full text-sm">Plain-text matrix I/O</span>
                         </div>
                         <div class="flex gap-4">
-                            <button class="flex-1 py-2 bg-orange-500 text-white rounded-lg font-bold hover:bg-orange-500/80 transition-colors">
+                            <button class="view-project-btn flex-1 py-2 bg-orange-500 text-white rounded-lg font-bold hover:bg-orange-500/80 transition-colors" data-project="project4">
                                 <i class="fas fa-eye mr-2"></i>View
                             </button>
-                            <button class="flex-1 py-2 border border-orange-500 text-orange-500 rounded-lg font-bold hover:bg-orange-500 hover:text-white transition-colors">
+                            <a href="https://github.com/bnrpmbd/Streamlit-KalkulatorMatriks" target="_blank" class="flex-1 py-2 border border-orange-500 text-orange-500 rounded-lg font-bold hover:bg-orange-500 hover:text-white transition-colors text-center">
                                 <i class="fab fa-github mr-2"></i>Code
-                            </button>
+                            </a>
                         </div>
                     </div>
                     
                     <!-- Project 5 -->
                     <div class="card-hover bg-cyber-gray rounded-xl p-6 border border-cyber-blue/20">
                         <div class="mb-6">
-                            <div class="w-full h-48 bg-gradient-to-br from-yellow-500/20 to-amber-500/20 rounded-lg overflow-hidden relative group">
-                                <img src="assets/project5.jpg" alt="IoT Monitoring System" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="w-full h-48 bg-gradient-to-br from-yellow-500/20 to-amber-500/20 rounded-lg overflow-hidden relative group cursor-pointer view-project-area" data-project="project5">
+                                <img src="assets/Projects/Portfolio_Website(Beta).png" alt="Portfolio Website (Beta)" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                                 <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-yellow-500/20 to-amber-500/20" style="display: none;">
                                     <i class="fas fa-microchip text-6xl text-yellow-500"></i>
                                 </div>
@@ -511,30 +524,31 @@
                                 </div>
                             </div>
                         </div>
-                        <h3 class="text-xl font-bold mb-3 text-cyber-blue">IoT Monitoring System</h3>
+                        <h3 class="text-xl font-bold mb-3 text-cyber-blue">Portfolio Website (Beta)</h3>
                         <p class="text-gray-300 mb-4">
-                            Real-time monitoring system using Arduino and sensors for environmental data.
+                            A responsive static portfolio website (Portfolio Website — Beta) built as a hands-on exercise while learning HTML and CSS; it showcases a jumbotron, About, Projects, and Contact sections with Bootstrap-based layout and lightweight JS animations.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-yellow-500/20 text-yellow-500 rounded-full text-sm">Arduino</span>
-                            <span class="px-3 py-1 bg-yellow-500/20 text-yellow-500 rounded-full text-sm">C++</span>
-                            <span class="px-3 py-1 bg-yellow-500/20 text-yellow-500 rounded-full text-sm">IoT</span>
+                            <span class="px-3 py-1 bg-yellow-500/20 text-yellow-500 rounded-full text-sm">HTML5/CSS3</span>
+                            <span class="px-3 py-1 bg-yellow-500/20 text-yellow-500 rounded-full text-sm">Bootstrap 5</span>
+                            <span class="px-3 py-1 bg-yellow-500/20 text-yellow-500 rounded-full text-sm">JavaScript (Vanilla)</span>
+                            <span class="px-3 py-1 bg-yellow-500/20 text-yellow-500 rounded-full text-sm">AOS/GSAP (Text Plugin)</span>
                         </div>
                         <div class="flex gap-4">
-                            <button class="flex-1 py-2 bg-yellow-500 text-cyber-dark rounded-lg font-bold hover:bg-yellow-500/80 transition-colors">
+                            <button class="view-project-btn flex-1 py-2 bg-yellow-500 text-cyber-dark rounded-lg font-bold hover:bg-yellow-500/80 transition-colors" data-project="project5">
                                 <i class="fas fa-eye mr-2"></i>View
                             </button>
-                            <button class="flex-1 py-2 border border-yellow-500 text-yellow-500 rounded-lg font-bold hover:bg-yellow-500 hover:text-cyber-dark transition-colors">
+                            <a href="https://github.com/bnrpmbd/Portfolio-Website-Beta" target="_blank" class="flex-1 py-2 border border-yellow-500 text-yellow-500 rounded-lg font-bold hover:bg-yellow-500 hover:text-cyber-dark transition-colors text-center">
                                 <i class="fab fa-github mr-2"></i>Code
-                            </button>
+                            </a>
                         </div>
                     </div>
                     
                     <!-- Project 6 -->
                     <div class="card-hover bg-cyber-gray rounded-xl p-6 border border-cyber-blue/20">
                         <div class="mb-6">
-                            <div class="w-full h-48 bg-gradient-to-br from-pink-500/20 to-rose-500/20 rounded-lg overflow-hidden relative group">
-                                <img src="assets/project6.jpg" alt="Mobile App Development" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="w-full h-48 bg-gradient-to-br from-pink-500/20 to-rose-500/20 rounded-lg overflow-hidden relative group cursor-pointer view-project-area" data-project="project6">
+                                <img src="assets/Projects/Rangkaian_HandDryer.png" alt="Automatic Hand Dryer Simulation" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                                 <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-pink-500/20 to-rose-500/20" style="display: none;">
                                     <i class="fas fa-mobile-alt text-6xl text-pink-500"></i>
                                 </div>
@@ -546,22 +560,58 @@
                                 </div>
                             </div>
                         </div>
-                        <h3 class="text-xl font-bold mb-3 text-cyber-blue">Mobile App Development</h3>
+                        <h3 class="text-xl font-bold mb-3 text-cyber-blue">Automatic Hand Dryer Simulation</h3>
                         <p class="text-gray-300 mb-4">
-                            Cross-platform mobile application for student management system.
+                            An automatic hand dryer simulation for Proteus — microcontroller-driven code (assembly, .a51) controls sensor-triggered drying, motor activation, and safety/time logic for hands-free operation.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-pink-500/20 text-pink-500 rounded-full text-sm">React Native</span>
-                            <span class="px-3 py-1 bg-pink-500/20 text-pink-500 rounded-full text-sm">JavaScript</span>
-                            <span class="px-3 py-1 bg-pink-500/20 text-pink-500 rounded-full text-sm">Firebase</span>
+                            <span class="px-3 py-1 bg-pink-500/20 text-pink-500 rounded-full text-sm">Proteus</span>
+                            <span class="px-3 py-1 bg-pink-500/20 text-pink-500 rounded-full text-sm">8051 (Keil .a51 assembly)</span>
+                            <span class="px-3 py-1 bg-pink-500/20 text-pink-500 rounded-full text-sm">Virtual instruments</span>
+                            <span class="px-3 py-1 bg-pink-500/20 text-pink-500 rounded-full text-sm">Basic electromechanical components</span>
                         </div>
                         <div class="flex gap-4">
-                            <button class="flex-1 py-2 bg-pink-500 text-white rounded-lg font-bold hover:bg-pink-500/80 transition-colors">
+                            <button class="view-project-btn flex-1 py-2 bg-pink-500 text-white rounded-lg font-bold hover:bg-pink-500/80 transition-colors" data-project="project6">
                                 <i class="fas fa-eye mr-2"></i>View
                             </button>
-                            <button class="flex-1 py-2 border border-pink-500 text-pink-500 rounded-lg font-bold hover:bg-pink-500 hover:text-white transition-colors">
+                            <a href="https://github.com/bnrpmbd/Proteus-HandDryer" target="_blank" class="flex-1 py-2 border border-pink-500 text-pink-500 rounded-lg font-bold hover:bg-pink-500 hover:text-white transition-colors text-center">
                                 <i class="fab fa-github mr-2"></i>Code
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 7 -->
+                    <div class="card-hover bg-cyber-gray rounded-xl p-6 border border-cyber-blue/20">
+                        <div class="mb-6">
+                            <div class="w-full h-48 bg-gradient-to-br from-pink-500/20 to-rose-500/20 rounded-lg overflow-hidden relative group cursor-pointer view-project-area" data-project="project7">
+                                <img src="assets/Projects/Rangkaian_ParkirOtomatis.png" alt="Automatic Parking System Simulation" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-pink-500/20 to-rose-500/20" style="display: none;">
+                                    <i class="fas fa-mobile-alt text-6xl text-pink-500"></i>
+                                </div>
+                                <div class="absolute inset-0 bg-cyber-dark/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <div class="text-center">
+                                        <i class="fas fa-search-plus text-3xl text-white mb-2"></i>
+                                        <p class="text-white font-bold">View Project</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-cyber-blue">Automatic Parking System Simulation</h3>
+                        <p class="text-gray-300 mb-4">
+                            A simulated Automatic Parking System implemented in 8051 assembly and validated in Proteus — handles vehicle detection, barrier control, occupancy counting, and user feedback for a basic contactless parking controller prototype.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-pink-500/20 text-pink-500 rounded-full text-sm">Proteus</span>
+                            <span class="px-3 py-1 bg-pink-500/20 text-pink-500 rounded-full text-sm">8051 (Keil .a51 assembly)</span>
+                            <span class="px-3 py-1 bg-pink-500/20 text-pink-500 rounded-full text-sm">Common simulated components</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <button class="view-project-btn flex-1 py-2 bg-pink-500 text-white rounded-lg font-bold hover:bg-pink-500/80 transition-colors" data-project="project6">
+                                <i class="fas fa-eye mr-2"></i>View
                             </button>
+                            <a href="https://github.com/bnrpmbd/Proteus-ParkirOtomatis" target="_blank" class="flex-1 py-2 border border-pink-500 text-pink-500 rounded-lg font-bold hover:bg-pink-500 hover:text-white transition-colors text-center">
+                                <i class="fab fa-github mr-2"></i>Code
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -656,6 +706,77 @@
             </p>
         </div>
     </footer>
+
+    <!-- Project Detail Modal -->
+    <div id="project-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-cyber-gray rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-cyber-blue/20">
+                <!-- Modal Header -->
+                <div class="flex justify-between items-center p-6 border-b border-cyber-blue/20">
+                    <h3 id="modal-title" class="text-2xl font-bold text-cyber-blue">Project Details</h3>
+                    <button id="close-modal" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+                
+                <!-- Modal Content -->
+                <div class="p-6">
+                    <!-- Project Images Gallery -->
+                    <div id="project-gallery" class="mb-8">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- Images will be dynamically inserted here -->
+                        </div>
+                    </div>
+                    
+                    <!-- Project Description -->
+                    <div class="mb-6">
+                        <h4 class="text-xl font-bold text-cyber-blue mb-4">Project Overview</h4>
+                        <div id="project-description" class="text-gray-300 leading-relaxed space-y-4">
+                            <!-- Description will be dynamically inserted here -->
+                        </div>
+                    </div>
+                    
+                    <!-- Tech Stack -->
+                    <div class="mb-6">
+                        <h4 class="text-xl font-bold text-cyber-blue mb-4">Technologies Used</h4>
+                        <div id="project-tech-stack" class="flex flex-wrap gap-2">
+                            <!-- Tech stack will be dynamically inserted here -->
+                        </div>
+                    </div>
+                    
+                    <!-- Features -->
+                    <div class="mb-6">
+                        <h4 class="text-xl font-bold text-cyber-blue mb-4">Key Features</h4>
+                        <ul id="project-features" class="text-gray-300 space-y-2">
+                            <!-- Features will be dynamically inserted here -->
+                        </ul>
+                    </div>
+                    
+                    <!-- Close Button -->
+                    <div class="flex justify-center">
+                        <button id="close-project-modal" class="px-8 py-3 bg-cyber-purple text-white rounded-lg font-bold hover:bg-cyber-purple/80 transition-colors">
+                            <i class="fas fa-times mr-2"></i>Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Lightbox Modal -->
+    <div id="image-lightbox" class="fixed inset-0 z-[70] hidden bg-black/90 backdrop-blur-sm">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="relative max-w-4xl w-full">
+                <button id="close-lightbox" class="absolute top-4 right-4 z-[80] text-white hover:text-cyber-blue transition-colors bg-black/50 rounded-full p-2">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+                <img id="lightbox-image" src="" alt="Project Image" class="w-full h-auto max-h-[80vh] object-contain rounded-lg">
+                <div class="text-center mt-4">
+                    <p id="lightbox-caption" class="text-white text-lg"></p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

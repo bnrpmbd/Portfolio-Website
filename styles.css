@@ -34,6 +34,47 @@
     color: #0a0a0a;
 }
 
+/* Project Modal Styles */
+#project-modal {
+    backdrop-filter: blur(10px);
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+#project-modal .bg-cyber-gray {
+    animation: modalSlideUp 0.3s ease-out;
+    box-shadow: 0 25px 50px -12px rgba(0, 210, 255, 0.25);
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes modalSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Project gallery hover effects */
+.project-gallery-item {
+    transition: all 0.3s ease;
+}
+
+.project-gallery-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 25px rgba(0, 210, 255, 0.3);
+}
+
 /* Animated border for cards */
 .animated-border {
     position: relative;
